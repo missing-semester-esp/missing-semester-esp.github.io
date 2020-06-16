@@ -1,13 +1,17 @@
 # The Missing Semester of Your CS Education [[![Build Status](https://travis-ci.com/missing-semester/missing-semester.svg?branch=master)](https://travis-ci.com/missing-semester/missing-semester)]
 
-Website for the [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/) class!
+Sitio web del curso [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)!
 
-Contributions are most welcome! If you have edits or new content to add, please
-open an issue or submit a pull request.
+Sitio web del curso en español: [El semestre faltante en tu educación de CS](https://missing-semester-esp.github.io/).
 
-## Development
 
-To build and view the site locally, run:
+Contribuciones en la traducción son bienvenidas! Si tienes alguna sugerencia
+o comentario respecto a la traducción del contenido abre un *issue* o envía 
+un *pull request* :+1:.
+
+## Desarrollo 
+
+Para construir y ver el sitio de forma local, ejecuta:
 
 ```bash
 bundle exec jekyll serve -w
