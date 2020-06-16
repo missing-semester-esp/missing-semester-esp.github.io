@@ -7,10 +7,9 @@ Las clases te enseñan de todo sobre temas avanzados de CS, desde
 sistemas operativos hasta *machine learning*, sin embargo, hay un tema crítico
 que rara vez se trata y a su vez es dejado para que los estudiantes 
 indaguen por sus propios medios: el cómo ser productivos con sus
-herramientas. Te enseñaremos a como dominar la interfaz de línea de comandos,
-a usar un poderoso editor de texto, a usar elaboradas características de
-un sistema de control de versiones, y mucho más!
-
+herramientas. Te enseñaremos a dominar la interfaz de línea de comandos,
+a usar un poderoso editor de texto, a utilizar de forma elaborada las opciones
+de los sistemas de control de versiones y mucho más!
 
 Los estudiantes pasan cientos de horas usando estas herramientras en el transcurso
 de su vida académica (y miles en su carrera), por lo que tiene sentido hacer
