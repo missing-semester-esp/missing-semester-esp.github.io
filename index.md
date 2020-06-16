@@ -4,23 +4,24 @@ title: El semestre faltante en tu educación de CS
 ---
 
 Las clases te enseñan de todo sobre temas avanzados de CS, desde
-sistemas operativos hasta *machine learning*, sin embargo hay un tema crítico
-que rara vez es tratado, y a su vez se deja a los estudiantes 
-indagar por su cuenta: el cómo ser productivos con sus
+sistemas operativos hasta *machine learning*, sin embargo, hay un tema crítico
+que rara vez se trata y a su vez es dejado para que los estudiantes 
+indaguen por sus propios medios: el cómo ser productivos con sus
 herramientas. Te enseñaremos a como dominar la interfaz de línea de comandos,
 a usar un poderoso editor de texto, a usar elaboradas características de
-sistemas de control de versión, y mucho más!
+un sistema de control de versiones, y mucho más!
+
 
 Los estudiantes pasan cientos de horas usando estas herramientras en el transcurso
-de su vida académica (y miles en su carrera), por lo que hace 
-sentido invertir tiempo en hacer la experiencia lo más fluido y suave posible. 
+de su vida académica (y miles en su carrera), por lo que tiene sentido hacer
+la experiencia lo menos friccionada y fluida posible. 
 Dominar estas herramientas no solo disminuirá el tiempo utilizado en averiguar 
 como usarlas a tú favor, si no además te permitirá resolver problemas que antes 
-parecían ser inmensamente complejos. 
+parecían ser imposibles.
 
 
 
-Lee acerca de la [motivación detrás de esta clase](/about/).
+Lee acerca de la [motivación detrás de esta clase](/acerda de/).
 
 {% comment %}
 # Registro
@@ -78,11 +79,13 @@ en
 - [Chinese (Traditional)](https://missing-semester-zh-hant.github.io/)
 - [Korean](https://missing-semester-kr.github.io/)
 - [Turkish](https://missing-semester-tr.github.io/)
+- [Spanish](https://missing-semester-esp.github.io/)
 
-Nota: estos son link externos a traducciones comunitarias. No los hemos revisado.
+*Nota: los link anteriores son traducciones comunitarias externas que no han
+sido revisadas.*
 
-Tienes alguna mejora en la traducción? Envía un 
-[pull request](https://github.com/missing-semester/missing-semester/pulls) 
+¿Tienes alguna sugerencia o mejora para la traducción del sitio? Envía un 
+[pull request](https://github.com/missing-semester-esp/missing-semester-esp.github.io/pulls) 
 para incorporarla!
 
 ## Agradecimientos 
@@ -96,7 +99,7 @@ AeroAstro](https://aeroastro.mit.edu/) por el equipo A/V; y Brandi Adams y
 ---
 
 <div class="small center">
-<p><a href="https://github.com/missing-semester/missing-semester">Source code</a>.</p>
-<p>Licensed under CC BY-NC-SA.</p>
-<p>See <a href="/license/">here</a> for contribution &amp; translation guidelines.</p>
+<p><a href="https://github.com/missing-semester/missing-semester">Código fuente</a>.</p>
+<p>Bajo licencia CC BY-NC-SA.</p>
+<p>Click <a href="/license/">aquí</a> para contribuciones &amp; lineamientos de traducción.</p>
 </div>
