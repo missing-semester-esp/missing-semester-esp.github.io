@@ -8,15 +8,15 @@ sistemas operativos hasta *machine learning*, sin embargo, hay un tema crítico
 que rara vez se trata y a su vez es dejado para que los estudiantes 
 indaguen por sus propios medios: el cómo ser productivos con sus
 herramientas. Te enseñaremos a dominar la interfaz de línea de comandos,
-a usar un poderoso editor de texto, a utilizar de forma elaborada las opciones
+a usar un poderoso editor de texto, a utilizar las características sofisticadas
 de los sistemas de control de versiones y mucho más!
 
 Los estudiantes pasan cientos de horas usando estas herramientras en el transcurso
 de su vida académica (y miles en su carrera), por lo que tiene sentido hacer
 la experiencia lo menos friccionada y fluida posible. 
-Dominar estas herramientas no solo disminuirá el tiempo utilizado en averiguar 
-como usarlas a tú favor, si no además te permitirá resolver problemas que antes 
-parecían ser imposibles.
+Dominar estas herramientas no solo disminuirá el tiempo que tardas en averiguar 
+como usarlas a tú voluntad, si no además te permitiran resolver problemas que antes 
+parecían imposibles.
 
 
 
@@ -77,8 +77,8 @@ en
 - [Chinese (Simplified)](https://missing-semester-cn.github.io/)
 - [Chinese (Traditional)](https://missing-semester-zh-hant.github.io/)
 - [Korean](https://missing-semester-kr.github.io/)
-- [Turkish](https://missing-semester-tr.github.io/)
 - [Spanish](https://missing-semester-esp.github.io/)
+- [Turkish](https://missing-semester-tr.github.io/)
 
 *Nota: los link anteriores son traducciones comunitarias externas que no han
 sido revisadas.*
@@ -98,7 +98,7 @@ AeroAstro](https://aeroastro.mit.edu/) por el equipo A/V; y Brandi Adams y
 ---
 
 <div class="small center">
-<p><a href="https://github.com/missing-semester/missing-semester">Código fuente</a>.</p>
+<p><a href="https://github.com/missing-semester-esp/missing-semester-esp.github.io">Código fuente</a>.</p>
 <p>Bajo licencia CC BY-NC-SA.</p>
 <p>Click <a href="/license/">aquí</a> para contribuciones &amp; lineamientos de traducción.</p>
 </div>
