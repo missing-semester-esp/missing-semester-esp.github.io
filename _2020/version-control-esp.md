@@ -582,6 +582,6 @@ en el explorador web que te enseña Git.
    luego correr `git config --global core.excludesfile ~/.gitignore_global`. 
    Haz esto, y configura tu archivo global gitignore para ignorar archivos
    temporales especificos de OS o del editor, como `.DS_Store`.
-1. Clona el [repositorio del sitio web de la clase](https://github.com/missing-semester/missing-semester),
-   encuentra un error de tipeo u otra mejora que puedas hacer, y envía un
+1. Clona el [repositorio del sitio web de la clase](https://github.com/missing-semester-esp/missing-semester-esp.github.io),
+   encuentra un error de tipeo, traducción u otra mejora que puedas hacer, y envía un
    *pull request* por Github.
