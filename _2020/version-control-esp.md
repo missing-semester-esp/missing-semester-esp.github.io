@@ -46,21 +46,21 @@ refleja la reputación de Git:
 Debido a que la interfaz de Git es en enredada, aprender Git 
 utilizando un enfoque de «arriba-a-abajo» (comenzando con su interfaz o línea
 de comandos) puede ser muy confuso. Claro que es posible memorizar un puñado 
-de comandos y pensarlos como si fueran fórmulas mágicas, y si algo malo llegará a
-ocurrir, siempre puedes aplicar la estrategia descrita en el *comic* de arriba.
+de comandos y pensarlos como si fueran fórmulas mágicas, y si algo malo ocurre, 
+siempre puedes aplicar la estrategia del *comic* de arriba.
  
 Si bien la interfaz de Git es poco agraciada, su diseño e ideas fundamentales son hermosas.
 Mientras que una interfaz horrible tiene que ser _memorizada_, un hermoso diseño
 puede ser _entendido_. Es por esto que damos una explicación de «abajo-a-arriba»
 sobre Git. Comenzando con su modelo de datos para luego abarcar la interfaz o 
 línea de comandos. Una vez que se entiende el modelo de datos, los comando se
-pueden entender mejor en términos de cómo manipulan el modelo de datos subyacente.
+pueden entender mejor en términos de cómo manipulan el modelo de datos subyacente. 
 
 # El modelo de datos de Git
 
-Existen muchos enfoques ad-hoc que puedes realizar para controlar versiones.
-Git tiene un modelo bien pensado que permite todas las buenas características de
-un sistema de control de versiones, como mantener un historial, soportar ramas y 
+Existen muchos enfoques _ad hoc_ que puedes realizar para controlar versiones.
+Git tiene un modelo bien pensado y que permite todas las características 
+de un buen sistema de control de versiones, como mantener un historial, soportar ramas y 
 permitir colaboración.
 
 ## Fotos
