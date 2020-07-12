@@ -6,8 +6,8 @@ Sitio web del curso en español: [El semestre faltante en tu educación de CS](h
 
 
 Contribuciones en la traducción son bienvenidas! Si tienes alguna sugerencia
-o comentario respecto a la traducción del contenido abre un *issue* o envía 
-un *pull request* :+1:.
+o comentario respecto a la traducción del contenido puedes abrir un *issue* o 
+envíar un *pull request* con la modificación :+1:.
 
 ## Desarrollo 
 
@@ -16,6 +16,14 @@ Para construir y ver el sitio de forma local, ejecuta:
 ```bash
 bundle exec jekyll serve -w
 ```
+
+## Notas sobre la traducción
+
+- Editores (Vim): corroborar traducción para el Visual Mode en comunidades de
+Vim en español.
+- Control de versiones (Git): corroborar con la traducción en español del libro 
+ProGit los términos específicos de Git. Traducir la imagen con el comic de XKCD. 
+
 
 ## License
 
