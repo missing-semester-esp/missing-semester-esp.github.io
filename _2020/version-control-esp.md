@@ -10,7 +10,7 @@ video:
 
 Los sistemas de control de versiones (o VCSs en ingles) son herramientas utilzadas
 para registrar y seguir los cambios en el código fuente (u otros archivos o carpetas). 
-Tal como su nombre implica, estas herramientas ayudan a mantener un historial 
+Tal como su nombre índica, estas herramientas ayudan a mantener un historial 
 de cambios y además facilitan la colaboración. Los VCSs registran los cambios
 realizados en las carpetas y su contenido en una serie de fotos, donde cada foto 
 encapsula el estado completo de los archivos/carpetas dentro de un directorio 
@@ -49,11 +49,11 @@ de comandos) puede ser muy confuso. Claro que es posible memorizar un puñado
 de comandos y pensarlos como si fueran fórmulas mágicas, y si algo malo ocurre, 
 siempre puedes aplicar la estrategia del *comic* de arriba.
  
-Si bien la interfaz de Git es poco agraciada, su diseño e ideas fundamentales son hermosas.
+Si bien la interfaz de Git es poco agraciada, su diseño e ideas fundamentales son hermosos.
 Mientras que una interfaz horrible tiene que ser _memorizada_, un hermoso diseño
 puede ser _entendido_. Es por esto que damos una explicación de «abajo-a-arriba»
 sobre Git. Comenzando con su modelo de datos para luego abarcar la interfaz o 
-línea de comandos. Una vez que se entiende el modelo de datos, los comando se
+línea de comandos. Una vez que se entiende el modelo de datos, los comandos se
 pueden entender mejor en términos de cómo manipulan el modelo de datos subyacente. 
 
 # El modelo de datos de Git
