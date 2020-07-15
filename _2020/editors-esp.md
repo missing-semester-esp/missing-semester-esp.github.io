@@ -18,21 +18,21 @@ Como programadores, gastamos la mayoría del tiempo editando nuestro código, po
 es valioso invertir tiempo en dominar un editor que se ajuste a tus necesidades.
 Acá esta la forma de cómo aprender un nuevo editor:
 
-- Comienzas con un tutorial (i.e. esta clase, además de otros recursos que te indicamos)
-- Te mantienes usando el editor para todas tus necesidades de edición (incluso si 
-al comienzo te vuelves más lento)
-- Investigas a medida que avanzas: si parece que debiera existir una mejor 
+- Comenzar con un tutorial (i.e. esta clase, además de otros recursos que te indicamos)
+- Usar el editor para todas tus necesidades de edición (incluso si 
+al comienzo te vuelve más lento)
+- Investigar a medida que avanzas: si parece que debiera existir una mejor 
 manera de hacer algo, probablemente la haya
 
-Si sigues el método de arriba al pie de la letra, comprometido totalmente usando
+Si sigues el método de arriba al pie de la letra, comprometido totalmente a usar
 el nuevo programa cada vez que tu proposito sea editar un texto, la línea de tiempo
-para aprender el sofisticado editor de texto será algo como esto. En una o dos horas,
+para aprender el sofisticado editor de texto será algo como lo siguiente: en una o dos horas,
 aprenderas lo básico de las funciones de edición como abrir y editar archivos, 
 guardar/salir, y navegar por los *buffers*. Una vez que lleves 20 horas de práctica,
 deberías ser igual de rápido como eras con tu antiguo editor. Luego de esto, 
-comienzan los beneficios: tendrás suficiente conocimiento y memoria muscular que 
-al usar el nuevo editor ahorrarás tiempo. Los editores de texto modernos son 
-herramientas sofisticadas y poderosas, por lo que el aprendizaje nunca termina: 
+comienzan los beneficios: tendrás suficiente conocimiento y memoria muscular de 
+tal manera que al usar el nuevo editor ahorrarás tiempo. Los editores de texto 
+modernos son herramientas sofisticadas y poderosas, por lo que el aprendizaje nunca termina: 
 y te volveras incluso más rápido a medida que aprendas más.
 
 # ¿Qué editor aprender? 
@@ -77,7 +77,7 @@ El resultado final de esto es un editor que puede igualar la velocidad a la que 
 
 El diseño de Vim esta basado en la idea de que la mayor parte del tiempo de un 
 programador se utiliza leyendo, navengado, realizando pequeñas ediciones, contrario 
-a escribir texto de forma regular en los que se escriben grandes secuencias de 
+a escribir texto de forma regular, en los que se escriben grandes secuencias de 
 texto. Por esta razón, Vim tiene multiples modos para operar:
 
 - **Normal**: para moverse dentro del archivo y realizar ediciones
@@ -112,7 +112,7 @@ Desde el modo Normal, presiona la tecla `i` para entrar al modo Inserción. Ahor
 Vim se comporta como cualquier otro editor de texto hasta que presiones la tecla
 `<ESC>` para regresar al modo Normal. Esto, con lo básico explicado anteriormente,
 es todo lo que necesitar para comenzar a editar archivos usando Vim (aunque no
-particularmente eficiente, si estas todo el tiempo editando desde el modo Insertar).
+particularmente eficiente, si estás todo el tiempo editando desde el modo Insertar).
 
 ## _Buffers_, pestañas, y ventanas
 
@@ -121,7 +121,7 @@ Vim tiene un número de pestañas, de las cuáles cada una tiene un número de
 ventanas (paneles separados). Cada ventana muestra un único *buffer*. A diferencia
 de otros programas con los que puedes estar familiarizado, como los exploradores
 web, no hay una correspondencia 1-a-1 entre *buffers* y ventanas; Las ventanas
-son simplemente vistas. Un *buffer* puede estar abierto en multiples ventanas,
+son simplemente vistas. Un *buffer* puede estar abierto en múltiples ventanas,
 incluso dentro de la misma pestaña. Esto puede ser útil para ver diferentes 
 partes de un mismo archivo.
 
@@ -130,8 +130,8 @@ Por defecto, Vim se inicia con una única pestaña abierta y esta contiene una
 
 ## Modo comando (o línea de comandos)
 
-Se ingresa al modo Comando tipeando `:` en modo Normal. El cursor se posicionara
-en la línea de comandos que se encuentra en la parte de abajo de la pantalla 
+Se ingresa al modo Comando tipeando `:` en modo Normal. El cursor se posicionará
+en la línea de comandos que se encuentra en la parte inferior de la pantalla 
 cuando presiones `:`. Este modo tiene muchas funcionalidades, incluyendo las de
 abrir, guardar y cerrar archivos, además de [salir de Vim](https://twitter.com/iamdevloper/status/435555976687923200).
 
@@ -151,7 +151,7 @@ abrir, guardar y cerrar archivos, además de [salir de Vim](https://twitter.com/
 La idea más importante en Vim es que su interfaz de comando es un lenguaje de
 programación en sí. Las teclas (con nombres mnemónicos) son comandos, y con estos
 se puede _componer_. Lo que permite moverse y editar de manera eficiente, 
-especialmente cuando los comandos se transforman en memoría muscular.
+especialmente cuando los comandos son asimilados por la memoria muscular.
 
 ## Movimiento
 
@@ -160,10 +160,13 @@ movimiento para navegar en el *buffer*. Los movimientos en Vim son llamados
 "sustantivos" porque hacen referencia a fragmentos del texto.
 
 - Movimientos básicos: `hjkl` (izquierda, abajo, arriba, derecha)
-- Palabras: `w` (siguiente palabra), `b` (comienzo de la palabra), `e` (final de la palabra)
+- Palabras: 
+     - `w`: siguiente palabra (del inglés *word*)
+     - `b`: comienzo de la palabra (del inglés *begin*)
+     - `e`: final de la palabra (del inglés *end*)
 - Líneas: `0` (comienzo de la línea), `^` (primer carácter no en blanco), `$` (final de la línea)
 - Pantalla: `H` (parte superior de la pantalla), `M` (parte media de la pantalla), `L` (parte inferior de la pantalla)
-- Desplazarse: `Ctrl-u` (hacia arriba), `Ctrl-d` (hacia abajo)
+- Desplazarse: `Ctrl-u` (hacia arriba y `u` del inglés *up*), `Ctrl-d` (hacia abajo y `d` del inglés *down*)
 - Archivo: `gg` (comienzo del archivo), `G` (fin del archivo)
 - Número de línea: `:{número}<CR>` or `{número}G` (línea {número})
 - Misceláneos: `%` (objeto respectivo)
@@ -181,14 +184,14 @@ Modo visual (visualización):
 - Visual Line
 - Visual Block
 
-Se pueden usar las teclas de movimiento para seleccionar.
+Se pueden usar las teclas de movimiento para realizar selección.
 
 ## Edición
 
-Todo lo que sueles hacer con el mouse, lo puedes hacer con el teclado usando
-los comandos de edición y movimiento. Aquí es donde la interfaz de Vim comienza
-a parecerse a un lenguaje de programación. Los comandos de edición de Vim también
-se conocen como "verbos" porque actuan sobre "sustantivos".
+Todo lo que solías hacer con el mouse, lo puedes hacer con el teclado usando
+los comandos de edición y a través de los comandos de movimiento. Aquí es donde
+la interfaz de Vim comienza a parecerse a un lenguaje de programación. Los comandos
+de edición de Vim también se conocen como "verbos" porque actuan sobre "sustantivos".
 
 - `i` entrar al modo Insertar 
     - pero para manipular/borrar texto, quieres usar algo como backspace (tecla retroceso) 
@@ -286,7 +289,7 @@ aplicarías las mismas ediciones usando algún otro programa. Nota que tan pocos
 tipeos de teclas requiere Vim, permitiendote editar a la velocidad que piensas.
 
 
-# Personalizar Vim
+# Personalizando Vim
 
 Vim es personalizable a través de un archivo de configuración de texto-plano
 en `~/.vimrc` (que contiene comandos Vimscript). Probablemente existen un 
@@ -294,16 +297,16 @@ monton de configuraciones básicas que quieras activar.
 
 Nosotros proporcionamos una configuración básica bien documentada que puedes
 usar como punto de partida. Recomendamos usarla porque arregla alguno de los
-comportamientos raros de Vim. **Descarga nuestra configuración [aquí](/2020/files/vimrc)
+comportamientos por defectos raros de Vim. **Descarga nuestra configuración [aquí](/2020/files/vimrc)
 y guardala en `~/.vimrc`.**
 
 Vim es altamente personificable y vale la pena gastar tiempo explorando las 
-opciones que se pueden modificar. Puedes echarle un ojo a los *dotfiles* de
+opciones que se pueden modificar. Puedes dar un vistazo a los *dotfiles* de
 personas en GitHub para usarlas como inspiración, por ejemplo, las configuraciones
 de Vim de los instructores ([Anish](https://github.com/anishathalye/dotfiles/blob/master/vimrc),
 [Jon](https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim) (usa [neovim](https://neovim.io/)),
 [Jose](https://github.com/JJGO/dotfiles/blob/master/vim/.vimrc)). Existen también
-muchas entradas de blog sobre estos temas. Intenta no copiar-y-pegar
+muchas entradas de blog sobre estos temas. Intenta no copiar y pegar
 configuraciones completas de otras personas, sino que leelas y entiéndelas, y
 toma lo que te sirva.
 
@@ -375,8 +378,8 @@ notebooks](https://github.com/lambdalisue/jupyter-vim-binding).
 # Vim avanzado 
 
 Aquí algunos ejemplos para demostrar el poder del editor. No podemos enseñarte
-todo este tipo de cosas, pero las aprenderas a medida que avances. Una buena
-heurística es: siempre que estes usando el editor y pienses "debe existir una mejor
+todo este tipo de cosas, pero las aprenderás a medida que avances. Una buena
+heurística es: siempre que estés usando el editor y pienses "debe existir una mejor
 forma de hacerlo", probablemente exista: búscala en internet.
 
 ## Buscar y remplazar
