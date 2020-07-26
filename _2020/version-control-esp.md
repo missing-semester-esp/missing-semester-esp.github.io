@@ -41,7 +41,7 @@ Mientras otros sistemas de control de versiones existen, **Git** es el estandar 
 facto de los sistemas de control de versiones. Este [comic de XKCD](https://xkcd.com/1597/)
 refleja la reputación de Git:
 
-![xkcd 1597](https://imgs.xkcd.com/comics/git.png)
+![xkcd_1597](/static/git.png)
 
 Debido a que la interfaz de Git es en enredada, aprender Git 
 utilizando un enfoque de «arriba-a-abajo» (comenzando con su interfaz o línea
@@ -495,7 +495,7 @@ conflictos por combinar ramas
 - `git reset HEAD <file>`: para deshacer la preparación del archivo
 - `git checkout -- <file>`: descartar cambios
 
-# Advanced Git
+# Git Avanzado
 
 - `git config`: Git es [muy personalizable](https://git-scm.com/docs/git-config)
 - `git clone --depth=1`: clonar simplificadamente, sin el historial completo de las versiones 
