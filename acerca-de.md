@@ -2,6 +2,7 @@
 layout: lecture
 title: "¿Por qué enseñamos esta clase?"
 ---
+Cuando estudias ciencias de la computacion por medios tradicionales, probablemente aprendas sobre temas avanzados dentro de la disciplina, desde sistemas operativos a lenguajes de programacion y machine learning. Pero en muchas instituciones hay un tema esencial que es rararamente cubierto y es dejado de leado por estudiantes 
 
 During a traditional Computer Science education, chances are you will take
 plenty of classes that teach you advanced topics within CS, everything from
