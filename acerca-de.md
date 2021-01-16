@@ -53,7 +53,7 @@ de abajo mostramos muchos trucos relacionados a la navegación del historial de 
 
 ## Control de versiones
 
-Como usar _ apropiadamente el control de versiones, tomar ventaja 
+Como usar _apropiadamente_ el control de versiones, tomar ventaja 
 para ahorrarte el desastre, colaborar con otros, rápidamente encontrar
 problemas aislados en los cambios. No más `rm -rf; git clone`. No más 
 conflictos en las combinaciones *merges* (bueno,al menos en menor cantidad).
