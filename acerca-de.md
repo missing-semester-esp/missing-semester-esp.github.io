@@ -54,10 +54,10 @@ de abajo mostramos muchos trucos relacionados a la navegación del historial de 
 
 Como usar _apropiadamente_ el control de versiones, tomar ventaja de este 
 para salvarte del desastre, colaborar con otros, rápidamente encontrar y aislar cambios problemáticos. 
-No más `rm -rf; git clone`. No más conflictos en las combinaciones *merges* (bueno,al menos en menor cantidad).
+No más `rm -rf; git clone`. No más conflictos en las combinaciones *merges* (bueno, al menos en menor cantidad).
 No más grandes bloques de código comentado. No más preocupaciones para encontrar
 que rompió tu código. No más "oh no, ¿debemos eliminar todo el código producido?". 
-Nosotros incluso te enseñaremos cómo contribuir a otros proyectos mediante solicitudes de contribución *pull requests*.
+Incluso te enseñaremos cómo contribuir a otros proyectos mediante solicitudes de contribución *pull requests*.
 
 En el ejemplo de abajo usamos `git bisect` para encontrar cuál liberación *commit*
 rompió las pruebas unitarias y entonces lo arreglamos mediante `git revert`
@@ -80,7 +80,7 @@ abajo convertimos rápidamente una tabla de HTML al formato CSV usando una macro
 
 ## Máquinas remotas
 
-Como no quedarte colgado cuando trabajas con máquinas remotas usando SSH key y
+Como no quedarte colgado cuando trabajas con máquinas remotas usando claves *SSH* y
 una terminal multiplexor *multiplexing*. No más mantener bastantes terminales abiertas 
 solamente para correr dos comandos a la vez. No más escribir tu contraseña por conexión. 
 No más perder todo tu trabajo, solo porque tu Internet falla o por un reinicio inesperado de tu computadora.
@@ -95,7 +95,7 @@ En el ejemplo de abajo usamos `tmux` para mantener sesiones vivas en servidores 
 
 Como buscar rápidamente archivos que intentas encontrar. No más
 uso innecesario de la interfaz gráfica para hallar en tu proyecto el
-código querido.
+código requerido.
 
 En el ejemplo de abajo encontramos rápidamente archivos con `fd` y 
 por trozos *snippets* de código con `rg`. También ejecutamos rápidamente 
@@ -114,7 +114,7 @@ No más copiar y pegar desde la salida de los archivos. No más estadísticas co
 ## Máquinas virtuales
 
 Como usar máquinas virtuales para probar nuevos sistemas operativos, proyectos
-aislados y no relacionados y mantener tu computadora principal limpia y organizada. 
+aislados y mantener tu computadora principal organizada. 
 No más corromper tu computadora accidentalmente mientras haces un laboratorio de seguridad.
 No más millones de paquetes aleatorios instalados con diferentes versiones.
 
@@ -126,7 +126,7 @@ más mensajes desencriptados.
 
 
 # Conclusión
-Esto, y más, será cubierto durante las 12 conferencias, cada una incluirá un
+Esto y más, será cubierto durante las 12 conferencias, cada una incluirá un
 ejercicio para que tu obtengas familiaridad con las herramientas en tu poder.
 
 Para ver las conferencias precursoras ve a [Herramientas Hacker](https://hacker-tools.github.io/lectures/),
