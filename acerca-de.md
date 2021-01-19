@@ -12,8 +12,8 @@ los estudiantes saben poco de las herramientas disponibles para ellos.
 Las computadoras fueron construidas para automatizar tareas manuales; todavía algunos
 estudiantes, ejecutan tareas manuales o fallan al tomar ventaja completa del poder
 de las herramientas como control de versiones y editores de texto. 
-En el mejor de los casos, estos resultan en ineficiencias y pérdida de tiempo; en el peor de los casos,
-resulta en problemas como pérdida de datos o falta de capacidad para terminar tareas.
+En el mejor de los casos, estos resultan en ineficiencias y pérdidas de tiempo; en el peor de los casos,
+resulta en problemas como pérdidas de datos o falta de capacidad para terminar tareas.
 
 Por la falta de enseñanza en el currículum  universitario de estos temas, los estudiantes no aprenden 
 como usar esas herramientas, o por lo menos no como usarlas eficientemente, así evitando gastar tiempo y 
