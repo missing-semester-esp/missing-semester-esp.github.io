@@ -11,40 +11,39 @@ Al pasar los años, enseñamos bastantes clases en el MIT; vemos, una y otra vez
 los estudiantes saben poco de las herramientas disponibles para ellos.
 Las computadoras fueron construidas para automatizar tareas manuales; todavía algunos
 estudiantes, ejecutan tareas manuales o fallan al tomar ventaja completa del poder
-de las herramientas como control de versiones y editores de texto. En en el mejor,
-estos resultan en ineficiencias y pérdida de tiempo; en el peor de los casos,
+de las herramientas como control de versiones y editores de texto. 
+En el mejor de los casos, estos resultan en ineficiencias y pérdida de tiempo; en el peor de los casos,
 resulta en problemas como pérdida de datos o falta de capacidad para terminar tareas.
- 
-Estos temas no enseñados como parte del curriculum universitario; a los estudiantes
-nunca se les muestra cómo usar esas herramientas, o al menos no, como usarlas     
-eficientemente, y así gastar tiempo y esfuerzo en tareas que deberían de ser simples.
+
+Por la falta de enseñanza en el currículum  universitario de estos temas, los estudiantes no aprenden 
+como usar esas herramientas, o por lo menos no como usarlas eficientemente, así evitando gastar tiempo y 
+esfuerzo en tareas que deberían ser simples.
 
 El currículum estándar de las ciencias computacionales esta olvidando los temas críticos    
 sobre el ecosistema computacional que podría hacer la vida de los estudiantes    
 significativamente más fácil.
 
 
-# El semestre perdido de tu educación
+# El semestre faltante en tu educación de Ciencias Computacionales
 
 Para ayudar a remediar esto, iniciamos una clase que cubre todos los temas considerados 
 cruciales para ser un científico de la computación y programador efectivo. La clase es 
-practica y promueve una introducción activa sobre las herramientas y técnicas que puedes 
+práctica y promueve una introducción activa sobre las herramientas y técnicas que puedes 
 aplicar inmediatamente en una amplia variedad de situaciones que encontrarás a 
-largo de tu camino.  La clase está siendo impartida durante el periodo de actividades independientes 
+lo largo de tu camino.  La clase está siendo impartida durante el periodo de actividades independientes 
 (intersemestral, un mes del semestre caracterizado por clases cortas organizadas por estudiantes)
 en el MIT en enero del 2020. Mientras que sus conferencias están sólo disponibles para los
-estudiantes del MIT, proveemos todas los materiales de las conferencias junto con las grabaciones
-de las conferencias al público.
+estudiantes del MIT; al público proveemos todo el material de las clases.
 
 Si esto suena como para ti, aquí algunos ejemplos de lo que la clase enseña:
 
 ## Terminal de comandos
 
-Como automatizar tareas comunes y repetitivas mediante alias, scripts y construir sistemas.
+Como automatizar tareas comunes y repetitivas mediante alias, _scripts_ y construir sistemas.
 No más copiar y pegar comandos desde un documento de texto. No más correr estos comandos uno 
 tras de otro. No más "olvide correr esa cosa" u "olvide pasar ese parámetro".
 
-Por ejemplo, búsquedas a través de tu historial puede ser un gran ahorro de tiempo. En el ejemplo
+Por ejemplo, búsquedas a través de tu historial pueden ser un gran ahorro de tiempo. En el ejemplo
 de abajo mostramos muchos trucos relacionados a la navegación del historial de tu terminal para 'convertir' comandos:
 
 <video autoplay="autoplay" loop="loop" controls muted playsinline  oncontextmenu="return false;"  preload="auto"  class="demo">
@@ -53,13 +52,12 @@ de abajo mostramos muchos trucos relacionados a la navegación del historial de 
 
 ## Control de versiones
 
-Como usar _apropiadamente_ el control de versiones, tomar ventaja 
-para ahorrarte el desastre, colaborar con otros, rápidamente encontrar
-problemas aislados en los cambios. No más `rm -rf; git clone`. No más 
-conflictos en las combinaciones *merges* (bueno,al menos en menor cantidad).
+Como usar _apropiadamente_ el control de versiones, tomar ventaja de este 
+para salvarte del desastre, colaborar con otros, rápidamente encontrar y aislar cambios problemáticos. 
+No más `rm -rf; git clone`. No más conflictos en las combinaciones *merges* (bueno,al menos en menor cantidad).
 No más grandes bloques de código comentado. No más preocupaciones para encontrar
-que rompió tu código. No más "oh no, ¿debemos eliminar todo el código producido?". Nosotros incluso te enseñaremos cómo contribuir a otros proyectos mediante
-solicitudes de contribución *pull requests*.
+que rompió tu código. No más "oh no, ¿debemos eliminar todo el código producido?". 
+Nosotros incluso te enseñaremos cómo contribuir a otros proyectos mediante solicitudes de contribución *pull requests*.
 
 En el ejemplo de abajo usamos `git bisect` para encontrar cuál liberación *commit*
 rompió las pruebas unitarias y entonces lo arreglamos mediante `git revert`
@@ -69,7 +67,7 @@ rompió las pruebas unitarias y entonces lo arreglamos mediante `git revert`
 
 ## Edición de texto
 
-Como editar eficientemente archivos desde la línea de comandos, tanto como local
+Como editar eficientemente archivos desde la línea de comandos, tanto como local como
 remoto, y tomar ventaja de las características avanzadas del editor. No más
 copiar archivos erráticamente. No más edición de archivos repetitiva.
 
@@ -83,7 +81,9 @@ abajo convertimos rápidamente una tabla de HTML al formato CSV usando una macro
 ## Máquinas remotas
 
 Como no quedarte colgado cuando trabajas con máquinas remotas usando SSH key y
-una terminal multiplexor *multiplexing*. No más mantener bastantes terminales abiertas solamente para correr dos comandos a la vez. No más escribir tu contraseña por conexión. No más perder todo, solamente solamente porque tu Internet falla o tu reiniciaste tu computadora.
+una terminal multiplexor *multiplexing*. No más mantener bastantes terminales abiertas 
+solamente para correr dos comandos a la vez. No más escribir tu contraseña por conexión. 
+No más perder todo tu trabajo, solo porque tu Internet falla o por un reinicio inesperado de tu computadora.
 
 En el ejemplo de abajo usamos `tmux` para mantener sesiones vivas en servidores remotos y `mosh` para soportar la itinerancia *roaming* de la red y las desconexiones.
 
@@ -122,7 +122,7 @@ No más millones de paquetes aleatorios instalados con diferentes versiones.
 
 Como estar en el Internet sin inmediatamente revelar todos tus secretos al mundo.
 No más plantearse contraseñas que coincidan con insanos criterios propios. No
-más desencriptados mensajes. 
+más mensajes desencriptados. 
 
 
 # Conclusión
