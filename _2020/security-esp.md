@@ -1,6 +1,6 @@
 ---
 layout: lecture
-title: "Security and Cryptography"
+title: "Seguridad y criptografía"
 date: 2019-01-28
 ready: false
 video:
@@ -8,27 +8,25 @@ video:
   id: tjwobAmnKTo
 ---
 
-Last year's [security and privacy lecture](/2019/security/) focused on how you
-can be more secure as a computer _user_. This year, we will focus on security
-and cryptography concepts that are relevant in understanding tools covered
-earlier in this class, such as the use of hash functions in Git or key
-derivation functions and symmetric/asymmetric cryptosystems in SSH.
+En la [conferencia de seguridad y privacidad](/2019/security) del ano 2019,
+nos enfocamos en como puedes ser un _usuario_ mas seguro.
+Este 2021, nos enfocaremos en los conceptos de securidad y criptografia
+considerados relevantes para entender las herramientas cubiertas antes de empezar
+esta clase, tales como las funciones has en Git o las claves de derivacion y 
+simetria/asimetria correspondientes a los sistemas criptograficos en _SSH_.
 
-This lecture is not a substitute for a more rigorous and complete course on
-computer systems security ([6.858](https://css.csail.mit.edu/6.858/)) or
-cryptography ([6.857](https://courses.csail.mit.edu/6.857/) and 6.875). Don't
-do security work without formal training in security. Unless you're an expert,
-don't [roll your own
-crypto](https://www.schneier.com/blog/archives/2015/05/amateurs_produc.html).
-The same principle applies to systems security.
+Esta conferencia no sustituye a los mas rigurosos y completos cursos: 
+[sistemas de seguridad computacionales 6.858](https://css.csail.mit.edu/6.858/),
+[criptografia 6.857](https://courses.csail.mit.edu/6.857/) y 6.875. No realices
+tareas de seguridad sin formal entrenamiento en la materia, a menos que tu 
+seas un experto: [no implementes tus propias librerias de criptografia](https://www.schneier.com/blog/archives/2015/05/amateurs_produc.html). El mismo principio aplica a los sistemas de seguridad.
 
-This lecture has a very informal (but we think practical) treatment of basic
-cryptography concepts. This lecture won't be enough to teach you how to
-_design_ secure systems or cryptographic protocols, but we hope it will be
-enough to give you a general understanding of the programs and protocols you
-already use.
+Esta conferencia posee un tratamiento informal y practico sobre los fundamentos
+criptograficos. Asi, no representa suficiente contenido para _disenar_ sistemas seguros,
+aunque esperamos suficiente, para darte un entendimiento general de los programas y protocolos
+que ya usas. 
 
-# Entropy
+# Entropia
 
 [Entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) is a
 measure of randomness. This is useful, for example, when determining the
