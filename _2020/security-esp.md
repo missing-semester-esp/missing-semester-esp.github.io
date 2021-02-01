@@ -28,55 +28,54 @@ que ya usas.
 
 # Entropia
 
-[Entropy](https://en.wikipedia.org/wiki/Entropy_(information_theory)) is a
-measure of randomness. This is useful, for example, when determining the
-strength of a password.
+[Entropia](https://en.wikipedia.org/wiki/Entropy_(information_theory)) es una medida
+aleatoria; util, por ejemplo, cuando determinanamos la fortaleza de una contrasena.
 
 ![XKCD 936: Password Strength](https://imgs.xkcd.com/comics/password_strength.png)
 
-As the above [XKCD comic](https://xkcd.com/936/) illustrates, a password like
-"correcthorsebatterystaple" is more secure than one like "Tr0ub4dor&3". But how
-do you quantify something like this?
+Como vemos arriba [XKCD comic](https://xkcd.com/936/) en la ilustacion, una contrasena como
+"correcthorsebatterystaple" es mas segura que "Tr0ub4dor&3". Pero como cuantificamos dicha
+algo como esto?
 
-Entropy is measured in _bits_, and when selecting uniformly at random from a
-set of possible outcomes, the entropy is equal to `log_2(# of possibilities)`.
-A fair coin flip gives 1 bit of entropy. A dice roll (of a 6-sided die) has
-\~2.58 bits of entropy.
+Entropia, medida en _bits_,  selecciona de manerea uniformemente aleatoria desde un 
+conjunto de posibles salidas, la entropia es igual a `log_2(# of posibilidades)`.
+Un moneda sesgada lanzanda significa 1 bit de entropia.  Un dado, \~2.58 bits de
+entropia.
 
-You should consider that the attacker knows the _model_ of the password, but
-not the randomness (e.g. from [dice
-rolls](https://en.wikipedia.org/wiki/Diceware)) used to select a particular
-password.
+Deberias considerar que el atacante sabe el _modelo_ de tu contrasena, pero no
+la aleatoriedad [dice rolls](https://en.wikipedia.org/wiki/Diceware) usada para seleccionar
+una contrasena particular.
 
-How many bits of entropy is enough? It depends on your threat model. For online
-guessing, as the XKCD comic points out, \~40 bits of entropy is pretty good. To
-be resistant to offline guessing, a stronger password would be necessary (e.g.
-80 bits, or more).
+Cuantos bits de entropia son suficientes? Depende del hilo de tu model. Para en linea 
+invitaciones, como indica XKCD, \~40 bits de entropia son excelentes. Para persistir 
+fuera de linea registors, una contrasena mas fuerte deberia ser necesaria: minimo 80 bits o mas.
 
-# Hash functions
+# Funciones hash
 
-A [cryptographic hash
-function](https://en.wikipedia.org/wiki/Cryptographic_hash_function) maps data
-of arbitrary size to a fixed size, and has some special properties. A rough
-specification of a hash function is as follows:
+Una [funcion hash criptografica](https://en.wikipedia.org/wiki/Cryptographic_hash_function) 
+relaciona datos de un tamano arbitario a un tamano fijo, generando algunas propiedades especiales.
+Una simple especificacion de una funcion hash es como sigue:
 
 ```
-hash(value: array<byte>) -> vector<byte, N>  (for some fixed N)
+hash(value: array<byte>) -> vector<byte, N> (para algun valor fijo N) 
 ```
 
-An example of a hash function is [SHA1](https://en.wikipedia.org/wiki/SHA-1),
-which is used in Git. It maps arbitrary-sized inputs to 160-bit outputs (which
-can be represented as 40 hexadecimal characters). We can try out the SHA1 hash
-on an input using the `sha1sum` command:
+Un ejemplo de una funcion es [SHA1](https://en.wikipedia.org/wiki/SHA-1),
+la cual es usada en Git. Relaciona una arbitriria entrada a una salida 160-bits de salida, es decir,
+puede ser representado como 40 caracteres hexadecimales. Podemos experimentar SHA1 en una entrada usando
+el comando `shasum`:
 
-```console
-$ printf 'hello' | sha1sum
+```consola
+$ printf 'hola' | sha1sum
 aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
-$ printf 'hello' | sha1sum
+$ printf 'hola' | sha1sum
 aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
-$ printf 'Hello' | sha1sum 
+$ printf 'Hola' | sha1sum 
 f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
 ```
+
+En un alto nivel, un funcion puede pensarse como una hard-to-invert-random-looknig 
+
 
 At a high level, a hash function can be thought of as a hard-to-invert
 random-looking (but deterministic) function (and this is the [ideal model of a
