@@ -74,67 +74,50 @@ $ printf 'Hola' | sha1sum
 f7ff9e8b7bb2e09b70935a5d785e0cc5d9d0abf0
 ```
 
-En un alto nivel, un funcion puede pensarse como una hard-to-invert-random-looknig 
+En un alto nivel, un funcion *hash* puede pensarse como una funcion dificil para invertir y de comportamiento
+aleatorio (pero deterministico) -[modelo ideal de una funcion hash](https://en.wikipedia.org/wiki/Random_oracle)-.
+Una funcion hash puede describerse como:
+- Determinista: la misma entrada genera siempre la mism salida.
+- No invertible: es dificl de encontrar una entrada `m` tal que `hash(m)=h` para alguna codiciada salida `h`.
+- La resistencia de colision objetivo: dada una entrada `m_1`, es complicado encontrar una entrada diferente
+`m_2` tal que `hash(m_1) = hash(m_2)`. 
+- Resistencia de colision. Es deficil encontrar dos entradas `m_1` y `m_2` tal que `hash(m_1)=hash(m_2)`.
+Notese que esta es una propiedad estrictamente más fuerte que la resistencia a 
+la colisión objetivo.
+
+Nota: mientras eso podria trabajar para ciertos propositos, SHA-1 es [no mas larga](https://shattered.io/)
+considerada una fuerte funcion criptografica hash. Tu podras encontrar esta tabla de 
+[tiempo de vida de funciones criptograficas hash] interesantes. Sin embargo, nota que recomendar especificar
+funciones has se escapa al alcance de esta conferencia. Si tu estas trabajando donde esto importa, tu necesitas
+formal entramiento en seguridad/criptografia.
+
+## Aplicaciones
+- Git, para el direccionar el contenido y almacenarlo. La idea de un [hash
+function](https://en.wikipedia.org/wiki/Hash_function) es una mas general concepto 
+(no hay funciones criptograficas hash). Por que usa Git una funcion criptografica hash?
+- Es un resumen corto de los contenidos de un archivo. EL software puede algunas veces descargarse
+ (potencialmente de fuentes no deseables) espejos. Por ejemplo, los ISO de Linux, y estaria bien no tener que confiar
+ en ellos. Los sitios oficiales muestran los hashes a largo del enlace de descarga (ese es el punto de *mirros* de terceras partes),
+ entonces puedes revisarlo despues de decargar un archivo.
+ - [Esquemas de comprometimiento *commitment*](https://en.wikipedia.org/wiki/Commitment_scheme).
+Supon, quieres comprometer *commit* un particular valor, pero relevar el valor en si mismo despues. Por ejemplo, quieres experimentar 
+mediante una moneda ajustada "en mi cabeza", sin una moneda confiable compartida que dos partes puedan ver. You podria elegir un valor 
+`r = random()`, y entonces compartir `h = sha256(r)`.  Entonces, tu podrias llamar a la cabeza o a la cola (por convencion, el valor par `r` 
+signfica cabeza y valor impar `r` signifca cola). Despues que tu llames, tu puedes revelar mi valor `r`, y tu puedes confirmar que no has faciltado
+encontrar `sha256(r)`, coincidir que el hash you comparti antes. 
 
 
-At a high level, a hash function can be thought of as a hard-to-invert
-random-looking (but deterministic) function (and this is the [ideal model of a
-hash function](https://en.wikipedia.org/wiki/Random_oracle)). A hash function
-has the following properties:
+# Funcion clave de derivacion
+Un concepto relacionado a la criptografia [funcion clave de derivacion](https://en.wikipedia.org/wiki/Key_derivation_function) (KDFs por sus siglas en ingles) 
+son usadas por un numero de aplicaciones, incluyendo la produccion de una salida de tamano fijo para ser usado por un numero de aplicaciones, incluyendo otras salidas filas para ser usadas como llaves en otros algoritmos criptograficos. Usualmente, KDFS son deliberidamente lentos, en orden para relentizar los ataques por fuerza bruda fuera de linea.
 
-- Deterministic: the same input always generates the same output.
-- Non-invertible: it is hard to find an input `m` such that `hash(m) = h` for
-some desired output `h`.
-- Target collision resistant: given an input `m_1`, it's hard to find a
-different input `m_2` such that `hash(m_1) = hash(m_2)`.
-- Collision resistant: it's hard to find two inputs `m_1` and `m_2` such that
-`hash(m_1) = hash(m_2)` (note that this is a strictly stronger property than
-target collision resistance).
+## Aplicaciones
 
-Note: while it may work for certain purposes, SHA-1 is [no
-longer](https://shattered.io/) considered a strong cryptographic hash function.
-You might find this table of [lifetimes of cryptographic hash
-functions](https://valerieaurora.org/hash.html) interesting. However, note that
-recommending specific hash functions is beyond the scope of this lecture. If you
-are doing work where this matters, you need formal training in
-security/cryptography.
+- Produccion llaves desde fraeses para usarse en otros algoritmos (por ejemplo, algoritmos criptograficos, ver abajo).
+- Almacenamiento de credenciales para autenticacion. El almacenamiento de contrasenas sobre texto plano es malo; la manera correcta es generar
+y almacenar una [sal](https://en.wikipedia.org/wiki/Salt_(cryptography)) aleatoria `sal = aleatoria()` para cada usuario, guarda 
+`KDF(contrasena + sal)`, y verifica los intento de iniciar sesion por cada recalculo de la KDF dada la contrasena ingresada y la sal guardada.
 
-## Applications
-
-- Git, for content-addressed storage. The idea of a [hash
-function](https://en.wikipedia.org/wiki/Hash_function) is a more general
-concept (there are non-cryptographic hash functions). Why does Git use a
-cryptographic hash function?
-- A short summary of the contents of a file. Software can often be downloaded
-from (potentially less trustworthy) mirrors, e.g. Linux ISOs, and it would be
-nice to not have to trust them. The official sites usually post hashes
-alongside the download links (that point to third-party mirrors), so that the
-hash can be checked after downloading a file.
-- [Commitment schemes](https://en.wikipedia.org/wiki/Commitment_scheme).
-Suppose you want to commit to a particular value, but reveal the value itself
-later. For example, I want to do a fair coin toss "in my head", without a
-trusted shared coin that two parties can see. I could choose a value `r =
-random()`, and then share `h = sha256(r)`. Then, you could call heads or tails
-(we'll agree that even `r` means heads, and odd `r` means tails). After you
-call, I can reveal my value `r`, and you can confirm that I haven't cheated by
-checking `sha256(r)` matches the hash I shared earlier.
-
-# Key derivation functions
-
-A related concept to cryptographic hashes, [key derivation
-functions](https://en.wikipedia.org/wiki/Key_derivation_function) (KDFs) are
-used for a number of applications, including producing fixed-length output for
-use as keys in other cryptographic algorithms. Usually, KDFs are deliberately
-slow, in order to slow down offline brute-force attacks.
-
-## Applications
-
-- Producing keys from passphrases for use in other cryptographic algorithms
-(e.g. symmetric cryptography, see below).
-- Storing login credentials. Storing plaintext passwords is bad; the right
-approach is to generate and store a random
-[salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) `salt = random()` for
-each user, store `KDF(password + salt)`, and verify login attempts by
 re-computing the KDF given the entered password and the stored salt.
 
 # Symmetric cryptography
