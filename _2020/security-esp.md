@@ -118,41 +118,34 @@ son usadas por un numero de aplicaciones, incluyendo la produccion de una salida
 y almacenar una [sal](https://en.wikipedia.org/wiki/Salt_(cryptography)) aleatoria `sal = aleatoria()` para cada usuario, guarda 
 `KDF(contrasena + sal)`, y verifica los intento de iniciar sesion por cada recalculo de la KDF dada la contrasena ingresada y la sal guardada.
 
-re-computing the KDF given the entered password and the stored salt.
+# Criptografia simetrica
 
-# Symmetric cryptography
-
-Hiding message contents is probably the first concept you think about when you
-think about cryptography. Symmetric cryptography accomplishes this with the
-following set of functionality:
+Ocultar el contenido de los mensajes es el primer concepto que piensas cuando escuchas sobre criptografia. La criptografia simetirca logra
+esto con el siguiente conjunto de funcionalidades:
 
 ```
-keygen() -> key  (this function is randomized)
+generadorClaves() -> clave  (esta funcion es aleatoria)
 
-encrypt(plaintext: array<byte>, key) -> array<byte>  (the ciphertext)
-decrypt(ciphertext: array<byte>, key) -> array<byte>  (the plaintext)
+encripta(textoPlano: array<byte>, clave) -> array<byte> (texto cifrado)
+descripta(textoCifrado: array<byte>, clave) -> array<byte>  (texto plano)
 ```
 
-The encrypt function has the property that given the output (ciphertext), it's
-hard to determine the input (plaintext) without the key. The decrypt function
-has the obvious correctness property, that `decrypt(encrypt(m, k), k) = m`.
+La funcion encriptadora tiene la propiedad que dada la salida (texto cifrado), es dificil determinar la entrada (texto plano) sin la clave.
+La funcion descriptadora tiene la propiedad exacta imaginda, tal que `decripta(encripta(m,k)) = m`.
 
-An example of a symmetric cryptosystem in wide use today is
-[AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
+Un ejemplo de un sistema simetrico criptografico con amplio uso hoy es: [AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
 
-## Applications
+## Aplicaciones
 
-- Encrypting files for storage in an untrusted cloud service. This can be
-combined with KDFs, so you can encrypt a file with a passphrase. Generate `key
-= KDF(passphrase)`, and then store `encrypt(file, key)`.
+- Archivos encriptados para almacenamiento en un servicio en la nube poco confiable. Esto puede ser combinado con KDF's, entonces tu puedes encriptar
+archivos con un frase semilla. Generar `clave = KDF(frase semilla)`, y entonces guardar con `encriptar(archivo, clave)`.
 
-# Asymmetric cryptography
+# Criptografia asimetrica
 
-The term "asymmetric" refers to there being two keys, with two different roles.
-A private key, as its name implies, is meant to be kept private, while the
-public key can be publicly shared and it won't affect security (unlike sharing
-the key in a symmetric cryptosystem). Asymmetric cryptosystems provide the
-following set of functionality, to encrypt/decrypt and to sign/verify:
+El termino "asimetrico" refiere a la existencia de dos claves, con diferntes responsabilidades. Una clave privada, 
+como su nombre indica, signifca mantenerse oculta al mundo exterior, mientras la clave publica puede ser ampliamente compartida y no afectara sistemas
+seguros (caso contrario a las llaves en los sistemas critograficos simetricos). Los sistemas simetricos asimetricos proveen las siguientes funcionalidades,
+para encriptar/desencriptar y para verficar/firmar:
 
 ```
 keygen() -> (public key, private key)  (this function is randomized)
