@@ -148,126 +148,81 @@ seguros (caso contrario a las llaves en los sistemas critograficos simetricos). 
 para encriptar/desencriptar y para verficar/firmar:
 
 ```
-keygen() -> (public key, private key)  (this function is randomized)
+keygen() -> (clave publica y clave privada)  (esta funcion es aleatoria)
 
-encrypt(plaintext: array<byte>, public key) -> array<byte>  (the ciphertext)
-decrypt(ciphertext: array<byte>, private key) -> array<byte>  (the plaintext)
+encriptar(texto_plano: array<byte>, clave publica) -> array<byte>  (texto crifado)
+desencriptar(texto_cifrado: array<byte>, clave privada) -> array<byte>  (texto plano)
 
-sign(message: array<byte>, private key) -> array<byte>  (the signature)
-verify(message: array<byte>, signature: array<byte>, public key) -> bool  (whether or not the signature is valid)
+firmar(mensaje: array<byte>, clave privada) -> array<byte>  (the signature)
+verificar(mensaje: array<byte>, firma: array<byte>, clave publica) -> bool  (es una firma valida?)
 ```
+La funciones encriptadoras/desencriptadoras tienen propiedades similares a sus analogos de los cripto-sistemas simetricos.
+Un mensaje puede ser encriptado usando la clave _publica_. Dado la salida (texto cifrado), es dificil determinar la entrada
+(texto plano) sin la clave _privada_. La funcion desenscriptadora tiene la obvia propiedad indicada, tal que `desencriptar(encriptar(m, clave publica), clave privada)=m`.
 
-The encrypt/decrypt functions have properties similar to their analogs from
-symmetric cryptosystems. A message can be encrypted using the _public_ key.
-Given the output (ciphertext), it's hard to determine the input (plaintext)
-without the _private_ key. The decrypt function has the obvious correctness
-property, that `decrypt(encrypt(m, public key), private key) = m`.
+La encripctacion simetrica y asimetrica puede ser comparada a las cerraduras. Un cripto-sistema simetrico es como una puerta cerrada:cualquiera con la llave puede abrirla y cerrarla. En los sistemas asimetricos es como buzon de correo con llave. Puedes dar un desbloquedo candado a alguien (la clave publica), ellos pueden poner un mensaje en la caja y entonces pueden bloquerdo, y despues de eso, solamente tu puedes abrir el candado porque tu mantienes la llave (la clave privada).  
 
-Symmetric and asymmetric encryption can be compared to physical locks. A
-symmetric cryptosystem is like a door lock: anyone with the key can lock and
-unlock it. Asymmetric encryption is like a padlock with a key. You could give
-the unlocked lock to someone (the public key), they could put a message in a
-box and then put the lock on, and after that, only you could open the lock
-because you kept the key (the private key).
+Las funciones de verificacion y firma tienen algunas propiedades que tu esperarias tener en las firmas fisicas: son dificiles de falsificar. No importa el mensaje, sin la clave _privada_, es dificil producir una firma tal que `verficar(mensaje, firma, clave publica)` retorna verdadero. Y por supuesto, la funcion verificada tiene la exacta propiedad: `verifica(mensaje, firmar(mensaje, clave privada), clave publica)=verdadero`
 
-The sign/verify functions have the same properties that you would hope physical
-signatures would have, in that it's hard to forge a signature. No matter the
-message, without the _private_ key, it's hard to produce a signature such that
-`verify(message, signature, public key)` returns true. And of course, the
-verify function has the obvious correctness property that `verify(message,
-sign(message, private key), public key) = true`.
+## Aplicaciones
 
-## Applications
+- [Encriptacion de correos electronicos PGP](https://en.wikipedia.org/wiki/Pretty_Good_Privacy).
+Las personas pueden tener claves publicas publicadas en linea (por ejemplo, en un PGP servidor de claves o en 
+[Keybase](https://keybase.io/)). Cualquiera puede enviarles un correo encriptado. 
+- Mensajeria privada. Aplicaciones como [Signal](https://signal.org/) y
+[Keybase](https://keybase.io/) usan claves asimetricas para establecer canales de comunicacion privados.
+- Sofware firmador. Git puede tener GPG-firmados _commits_ y las etiquetas _tags_. Con un publicada clave publica,
+cualqueira puede verificar la autencidad del software descargado.
 
-- [PGP email encryption](https://en.wikipedia.org/wiki/Pretty_Good_Privacy).
-People can have their public keys posted online (e.g. in a PGP keyserver, or on
-[Keybase](https://keybase.io/)). Anyone can send them encrypted email.
-- Private messaging. Apps like [Signal](https://signal.org/) and
-[Keybase](https://keybase.io/) use asymmetric keys to establish private
-communication channels.
-- Signing software. Git can have GPG-signed commits and tags. With a posted
-public key, anyone can verify the authenticity of downloaded software.
+## Distribucion de claves
 
-## Key distribution
+La clave asimetrica criptografica es maravillosa, pero tiene un gran reto para distruibuir las claves publicas / relacionar claves publicas
+a identidades del mundo real. Hay muchas soluciones a este problema, Signal, por ejemplo, confia en el primer uso, y soporta un fuera de banda de intercambio
+de claves publicas (tu verificas a tus amigos, la seguridad de numeros en persona). Otro ejemplo, PGP, cuya solucion es 
+[web of trust](https://en.wikipedia.org/wiki/web_of_trust). Keybase mediante [prueba social](https://keybase.io/blog/chat-apps-softer-than-tofu) lo resuelve, juntocon otras buenas ideas, por eso nos gusta, aunque cada modelo tiene sus propias meritos.
 
-Asymmetric-key cryptography is wonderful, but it has a big challenge of
-distributing public keys / mapping public keys to real-world identities. There
-are many solutions to this problem. Signal has one simple solution: trust on
-first use, and support out-of-band public key exchange (you verify your
-friends' "safety numbers" in person). PGP has a different solution, which is
-[web of trust](https://en.wikipedia.org/wiki/Web_of_trust). Keybase has yet
-another solution of [social
-proof](https://keybase.io/blog/chat-apps-softer-than-tofu) (along with other
-neat ideas). Each model has its merits; we (the instructors) like Keybase's
-model.
+# Casos de estudio
 
-# Case studies
+## Los gestores de contrasena
 
-## Password managers
+Esta es una esencial herramienta que todos deberian intenatar usar (por ejemplo [KeePassXC](https://keepassxc.org/)). Los gestos de contrasena te permiten usar
+contrasenas unicas, aleatorias generadas con alta entropia para todos los sitios web -apps-, y guardan todas tus contrasenas en un unico lugar, encriptados
+un cifrado simetrico con una clave producida desde una frase usado un KDF.
 
-This is an essential tool that everyone should try to use (e.g.
-[KeePassXC](https://keepassxc.org/)). Password managers let you use unique,
-randomly generated high-entropy passwords for all your websites, and they save
-all your passwords in one place, encrypted with a symmetric cipher with a key
-produced from a passphrase using a KDF.
+Usando un gestor de contrasena te evita reusar contrasenas, entonces cuando los sitios web sean comprometidos, el impacto a tu seguridad sera menor.
+Usando contrasenas con alta entropia (tu estaras menos comprometido), y soalmente necesitas recordar una unica contrasena altamente entropica. 
 
-Using a password manager lets you avoid password reuse (so you're less impacted
-when websites get compromised), use high-entropy passwords (so you're less likely to
-get compromised), and only need to remember a single high-entropy password.
+## Doble factor de autenticacion
 
-## Two-factor authentication
+[Doble factor de autententicacion](https://en.wikipedia.org/wiki/Multi-factor_authentication)
+(2FA) requiere usar una frase (algo que tu sabes) junto con un 2FA autenticador (como con [YubiKey](https://www.yubico.com/), "algo que tu tienes")
+en orden para proteger contra contrasenas robadas y ataques por [phishing](https://en.wikipedia.org/wiki/Phishing).
 
-[Two-factor
-authentication](https://en.wikipedia.org/wiki/Multi-factor_authentication)
-(2FA) requires you to use a passphrase ("something you know") along with a 2FA
-authenticator (like a [YubiKey](https://www.yubico.com/), "something you have")
-in order to protect against stolen passwords and
-[phishing](https://en.wikipedia.org/wiki/Phishing) attacks.
+## Encriptacion completa de disco
 
-## Full disk encryption
-
-Keeping your laptop's entire disk encrypted is an easy way to protect your data
-in the case that your laptop is stolen. You can use [cryptsetup +
+Manteniendo el disco de tu laptop enteramente encriptado es una manera facil de proteger tus datos en caso que tu computadora sea robada.
+Tu puedes usar [cryptsetup +
 LUKS](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_a_non-root_file_system)
-on Linux,
-[BitLocker](https://fossbytes.com/enable-full-disk-encryption-windows-10/) on
-Windows, or [FileVault](https://support.apple.com/en-us/HT204837) on macOS.
-This encrypts the entire disk with a symmetric cipher, with a key protected by
-a passphrase.
+en Linux,
+[BitLocker](https://fossbytes.com/enable-full-disk-encryption-windows-10/) en Windows o [FileVault](https://support.apple.com/en-us/HT204837) en macOS.
+Estos encriptan el disco entero con una clave simetrica, con una clave protegida por una frase.
 
-## Private messaging
+## Mensajeria privada
 
-Use [Signal](https://signal.org/) or [Keybase](https://keybase.io/). End-to-end
-security is bootstrapped from asymmetric-key encryption. Obtaining your
-contacts' public keys is the critical step here. If you want good security, you
-need to authenticate public keys out-of-band (with Signal or Keybase), or trust
-social proofs (with Keybase).
+Usa [Signal](https://signal.org/) o [Keybase](https://keybase.io/). La seguridad de las claves de extremo a extremo es arrancada desde una encriptacion por clave
+asimetrica. Obtener las claves publicas de tus contactos es el paso crtico aqui. Si quieres una buena seguridad, necesitas autenticar las claves publicas
+fuera de banda (como Signal o Keybase) o confiar en la prueba social (como Keybase).
 
 ## SSH
 
-We've covered the use of SSH and SSH keys in an [earlier
-lecture](/2020/command-line/#remote-machines). Let's look at the cryptography
-aspects of this.
+Hemos cubierto el uso de SSH y las claves SSH en una [conferencia anterior](/2020/command-line/#remote-machines). Miramos algunos aspectos criptograficos.
+Cuando tu corres `ssh-keygen`, es generada una clave asimetrica par, `clave_publica, clave_privada`. Esta es generada aleatoriamente, usando la entropia generada por el sistema operativo (collecionada desde eventos del hardware, etc.). La clave publica es guardada como es (es publica, entonces mantenerla en secreto no es importante), pero en el reposo, la clave privada deberia ser encriptarse el disco.
 
-When you run `ssh-keygen`, it generates an asymmetric keypair, `public_key,
-private_key`. This is generated randomly, using entropy provided by the
-operating system (collected from hardware events, etc.). The public key is
-stored as-is (it's public, so keeping it a secret is not important), but at
-rest, the private key should be encrypted on disk. The `ssh-keygen` program
-prompts the user for a passphrase, and this is fed through a key derivation
-function to produce a key, which is then used to encrypt the private key with a
-symmetric cipher.
+El programa `ssh-keygen` pide al usuario una frase, y este se alimenta a traves de una funcion de clave derivada para producir una clave, la cual entonces
+es usada para encriptar la clave privada con un cifraco simetrico.
 
-In use, once the server knows the client's public key (stored in the
-`.ssh/authorized_keys` file), a connecting client can prove its identity using
-asymmetric signatures. This is done through
-[challenge-response](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication).
-At a high level, the server picks a random number and sends it to the client.
-The client then signs this message and sends the signature back to the server,
-which checks the signature against the public key on record. This effectively
-proves that the client is in possession of the private key corresponding to the
-public key that's in the server's `.ssh/authorized_keys` file, so the server
-can allow the client to log in.
+En uso, una vez que el servidor sabe que la clave publica del cliente (almacenadas en el archivo `.ssh/authorized_keys`), 
+una conexion al  cliente puede provar su identidad usando las firmas asimetricas. Esto es hecho a traves de la [challenge-response](https://en.wikipedia.org/wiki/Challenge%E2%80%93response_authentication). En un alto nivel, el servidor elige un numero aleatorio y lo envia al cliente. El cliente entonces firma este mensaje y envia la firma de regreso al servidor, el cual revisa la firma contra la clave publica en el registro. Esto efectivamente prueba que el cliente es el poseedor de la clave privada correspondiente a la clave publica que esta en el archivo `.ssh/authorized_key` del servidor, entonces el servidor puede permitir al cliente continuar.
 
 {% comment %}
 extra topics, if there's time
@@ -277,50 +232,39 @@ security concepts, tips
 - HTTPS
 {% endcomment %}
 
-# Resources
+# Recursos
 
-- [Last year's notes](/2019/security/): from when this lecture was more focused on security and privacy as a computer user
-- [Cryptographic Right Answers](https://latacora.micro.blog/2018/04/03/cryptographic-right-answers.html): answers "what crypto should I use for X?" for many common X.
+- [Notas del ano pasado](/2019/security/): cuando esta conferencia estaba mas enfocada en la seguridad y privacidad como un usuario final.
+- [Correctas respuestas criptograficas](https://latacora.micro.blog/2018/04/03/cryptographic-right-answers.html): respuestas a "que cripto deberia usar para X?", para esas comunes X.
 
-# Exercises
+# Ejercicios
 
-1. **Entropy.**
-    1. Suppose a password is chosen as a concatenation of five lower-case
-       dictionary words, where each word is selected uniformly at random from a
-       dictionary of size 100,000. An example of such a password is
-       `correcthorsebatterystaple`. How many bits of entropy does this have?
-    1. Consider an alternative scheme where a password is chosen as a sequence
-       of 8 random alphanumeric characters (including both lower-case and
-       upper-case letters). An example is `rg8Ql34g`. How many bits of entropy
-       does this have?
-    1. Which is the stronger password?
-    1. Suppose an attacker can try guessing 10,000 passwords per second. On
-       average, how long will it take to break each of the passwords?
-1. **Cryptographic hash functions.** Download a Debian image from a
-   [mirror](https://www.debian.org/CD/http-ftp/) (e.g. [from this Argentinean
-   mirror](http://debian.xfree.com.ar/debian-cd/current/amd64/iso-cd/).
-   Cross-check the hash (e.g. using the `sha256sum` command) with the hash
-   retrieved from the official Debian site (e.g. [this
-   file](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA256SUMS)
-   hosted at `debian.org`, if you've downloaded the linked file from the
-   Argentinean mirror).
-1. **Symmetric cryptography.** Encrypt a file with AES encryption, using
+1. **Entropia.**
+    1. Supon una contrasena es elegida como una concadenacion de 5 palabras minisculas del diccionario,
+       donde cada palabra es seleccionada uniformemente aleatoria desde un diccionario de 100,000 palabras.
+       Un ejemplo el cual la contrasena sea `correctocaballobateriagrapa`. Cuantos bits de entropia tiene esto?
+    2. Considera un esquema alternativo donde una contrasena es elegida como una sequencia de 8 caracteres aleatorios
+       alfanumericos (incluyendo minisculas y mayusculas). Un ejemplo es `rg8Ql34g`. Cuantos bits de entropia tiene esto?
+    3. Cual es la contrasena mas fuerte?
+    4. Supon un atacante puede intentar 10,000 contrasenas por segundo. En promedio, cuanto tiempo tomara romper cada contrasena?
+
+2. **Funciones hash criptograficas.** 
+   1. Descarga una imagen Debian desde un [mirror](https://www.debian.org/CD/http-ftp/) (ejemplo [Mirror argentino](http://debian.xfree.com.ar/debian-cd/current/amd64/iso-cd/).
+   Verifica de forma cruzada  el hash (ejemplo usando el comando `sha256sum`) con el hash mostrado desde el sitio oficial desde Debian (ejemplo [este archivo](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA256SUMS)
+   almacenados en `debian.org`, si tu has descargado el archivo vinculado al mirror argentino).
+
+3. **Criptografia simetrica.** Encripta un archivo por AES, usando
    [OpenSSL](https://www.openssl.org/): `openssl aes-256-cbc -salt -in {input
-   filename} -out {output filename}`. Look at the contents using `cat` or
-   `hexdump`. Decrypt it with `openssl aes-256-cbc -d -in {input filename} -out
-   {output filename}` and confirm that the contents match the original using
-   `cmp`.
-1. **Asymmetric cryptography.**
-    1. Set up [SSH
-       keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
-       on a computer you have access to (not Athena, because Kerberos interacts
-       weirdly with SSH keys). Rather than using RSA keys as in the linked
-       tutorial, use more secure [ED25519
-       keys](https://wiki.archlinux.org/index.php/SSH_keys#Ed25519). Make sure
-       your private key is encrypted with a passphrase, so it is protected at
-       rest.
-    1. [Set up GPG](https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages)
-    1. Send Anish an encrypted email ([public key](https://keybase.io/anish)).
-    1. Sign a Git commit with `git commit -S` or create a signed Git tag with
-       `git tag -s`. Verify the signature on the commit with `git show
-       --show-signature` or on the tag with `git tag -v`.
+   filename} -out {output filename}`. Mira el contenido usando `cat` o `hexdump`. Desencripta con `openssl aes-256-cbc -d -in {input filename} -out
+   {output filename}` y confirma que el contenido  coindicida con el original con `cmp`.
+
+1. **Criptografia asimetrica.**
+    1. Configura [las claves SSH](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
+       en una computadora que tengas acceso (no Athena, porque Kerberos interactua extranamente con claves SSH).
+       En un lugar de usar claves RSA como en el tutorial vinculado, usa la mas segura 
+       [claves ED25519](https://wiki.archlinux.org/index.php/SSH_keys#Ed25519).
+       Asegurate que tu contrasena esta encriptada con una frase, entonces eso te protegera del resto.
+    2. [Configura GPG](https://www.digitalocean.com/community/tutorials/how-to-use-gpg-to-encrypt-and-sign-messages)
+    3. Envia a Anish un email encriptado. ([clave publica](https://keybase.io/anish)).
+    4. Firma un git commit con `git commit -S` o create una etiqueda git firmada con `git tag -s`.
+       Verifica la firma en el commit con `git show --show-signature` o en el caso de la etiqueta con `git tag -v`. 
