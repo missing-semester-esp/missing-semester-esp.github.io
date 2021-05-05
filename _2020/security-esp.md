@@ -2,7 +2,7 @@
 layout: lecture
 title: "Seguridad y criptografía"
 date: 2019-01-28
-ready: false
+ready: true
 video:
   aspect: 56.25
   id: tjwobAmnKTo
