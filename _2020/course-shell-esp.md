@@ -17,7 +17,7 @@ gran número de herramientas disponibles a nuestro alcance, habilitante
 para ser más productivos y resolver problemas complejos cuando trabajamos
 en cualquier problema relacionado con la computación. Todavía muchos de
 nosotros utilizamos una pequeño conjunto de esas herramientas: sabemos
-suficientes memoria fórmulas mágicas de memoria para sobrevivir y sin
+suficientes fórmulas mágicas de memoria para sobrevivir y sin
 pensar los comandos de Internet, copipegándolos cuando nos bloqueamos. Esta clase 
 es un intento de abordarlo.
 
