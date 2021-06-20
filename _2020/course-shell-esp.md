@@ -215,7 +215,7 @@ Para entrar a un directorio, un usuario debe tener permisos para "buscar" (repre
 en ese directorio (y sus padres). Para listar sus contenido, un usuario debe tener permisos de lectur `r` en 
 ese directorio. Para los archivos, los permisos son como se esperan.  `-` indica que no se tiene ninguno de los
 permisos anteriores (ni lectura, ni ejecutar, ni escribir). Nota que casi todos los archivos en `/bin` tienen
-los permisos para ejecutar -`x`- establecidos para el último grupo -para todos los demas-, entonces
+los permisos para ejecutar -`x`- establecidos para el último grupo -para los demás-, entonces
 cualquiera puede ejecutar esos programas.
 
 Algunos otros comunes programas para conocer en este punto son `mv` (para renombrar/mover un archivo), `cp`
