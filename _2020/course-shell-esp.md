@@ -222,8 +222,8 @@ Algunos otros comunes programas para conocer en este punto son `mv` (para renomb
 (para copiar un archivo) y `mkdir` (para crear un nuevo directorio).
 
 Si tu alguna vez quieres _más_ información sobre los argumentos de un programa, entradas, salidas,
-o como trabaja en general, prueba el comando `man`. Eso toma como un argumento el nombre de un programa,
-y te muestra sus salidas _manual page_. Presiona `q` para salir.
+o como trabaja en general, prueba el comando `man` (páginas de manual). Eso toma como un argumento el nombre de un programa,
+y te muestra sus salidas. Presiona `q` para salir.
 
 ```console
 missing:~$ man ls
