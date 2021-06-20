@@ -16,8 +16,8 @@ computadora como a los cómputos de nuestras aplicaciones. Tenemos un
 gran número de herramientas disponibles a nuestro alcance, habilitante
 para ser más productivos y resolver problemas complejos cuando trabajamos
 en cualquier problema relacionado con la computación. Todavía muchos de
-nosotros utilizamos una pequeño conjunto de esas herramientas: sabemos
-suficientes fórmulas mágicas de memoria para sobrevivir y copipegando sin
+nosotros utilizamos una pequeño conjunto de esas herramientas: sobrevivimos sabiendo
+suficientes fórmulas mágicas de memoria y copipegando sin
 pensar los comandos de Internet cuando nos bloqueamos. Esta clase 
 es un intento de abordarlo.
 
