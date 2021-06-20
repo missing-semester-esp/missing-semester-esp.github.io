@@ -43,7 +43,7 @@ Debido al tiempo limitado, no cubriremos todas las herramientas en el mismo nive
 detalle que una clase de gran escala podría tener. Donde sea posible, intentaremos 
 guiarte hacia los recursos para guiarte para allá dentro de la herramienta o tema,
 pero si algo en particular te llama la atencion, no dudes en comunicarse con nosotros
-y pedir sugerencias!
+y pedir sugerencias.
 
 # Tema 1: La shell
 
