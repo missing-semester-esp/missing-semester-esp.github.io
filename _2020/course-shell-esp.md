@@ -270,7 +270,7 @@ en el sistema: puede crear, leer, actualizar, y eliminar cualquier archivo en el
 Sin embargo, tú usualmente no inicias sesión como "root" dado que es 
 demasiado fácil romper accidentalmente algo. En su lugar, usamos el comando `sudo`. Como su nombre implica, eso 
 te permite hacer algo "do" como superusuario "su" (abreviación para super usuario). Cuando obtienes mensajes de
-error por permisos denegados , usualmente necesitas permisos como "root", aunque asegurate dos veces de que es lo que 
+error por permisos denegados, usualmente necesitas permisos como "root", aunque asegurate dos veces de que es lo que 
 realmente quieres.
 
 Necesitas ser "root" para poder escribir al archivo `sysfs` montado sobre `/sys`. `sysfs` expone unos parametros del kernel
