@@ -111,7 +111,7 @@ missing:~$ echo "Mis fotos"
 hello
 ```
 
-Pero como logra la shell encontrar los programas `date` o `echo`?
+Pero ¿cómo logra la shell encontrar los programas `date` o `echo`?
 Bueno, la shell es un entorno de programación, como Python o Ruby,
 entonces tiene variables, condicionales, bucles, y funciones. Cuando tu corres
 comandos en tu shell, tú realmente escribes un pequeño bit de código que tu shell
