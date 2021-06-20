@@ -221,7 +221,7 @@ cualquiera puede ejecutar esos programas.
 Algunos otros comunes programas para conocer en este punto son `mv` (para renombrar/mover un archivo), `cp`
 (para copiar un archivo) y `mkdir` (para crear un nuevo directorio).
 
-Si tu alguna vez quieres _mas_ información sobre los argumentos de un programa, entradas, salidas,
+Si tu alguna vez quieres _más_ información sobre los argumentos de un programa, entradas, salidas,
 o como trabaja en general, prueba el comando `man`. Eso toma como un argumento el nombre de un programa,
 y te muestra sus salidas _manual page_. Presiona `q` para salir.
 
