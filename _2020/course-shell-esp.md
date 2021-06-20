@@ -338,7 +338,7 @@ próxima lección, hablaremos sobre como automatizar tareas más complejas usand
      Para entender el por qué no trabaja consulta la salida de `ls` (pista: mira los bits de permisos).
  
  6. Corre el comando explícitamente empezando con el intérprete `sh`, y dando el archivo `semester` como el primer
-    argumento, es decir `sh semester`.  ¿por qué este funcionó mientras `./semester` no lo hace?
+    argumento, es decir `sh semester`. ¿Por qué este funcionó mientras `./semester` no lo hace?
 
  7. Busca el programa `chmod`.  
  
