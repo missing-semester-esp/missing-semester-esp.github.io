@@ -47,7 +47,7 @@ y pedir sugerencias.
 
 # Tema 1: La shell
 
-##  ¿Que es la shell?
+##  ¿Qué es la shell?
 
 Las computadoras, estos días tienen una variedad de interfaces: 
 sofisticadas interfaces gráficas de usuarios, interfaces de voz,
@@ -344,7 +344,7 @@ próxima lección, hablaremos sobre como automatizar tareas más complejas usand
  
  8. Usa `chmod` para asegurarte que es posible correr el comando `./semester` en lugar  de tener que escribir
    `sh semester`. ¿Cómo sabe tu shell que el archivo  debe ser interpretado usando `sh`? Ve esta página
-    [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) para mas informacion.
+    [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) para más información.
 
  9. Usa `|` y `>` para escribir la fecha salida del "último modificado" por `semester` dentro de un archivo
     llamado `last-modified.txt` en tu directorio "home".
