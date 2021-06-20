@@ -2,7 +2,7 @@
 layout: lecture
 title: "Introducción al curso + la shell"
 date: 2019-01-13
-ready: false
+ready: true
 video:
   aspect: 56.25
   id: Z56Jmr9Z34Q
