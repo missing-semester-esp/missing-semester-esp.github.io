@@ -20,7 +20,7 @@ parecían imposibles.
 
 
 
-Lee acerca de la [motivación detrás de esta clase](/acerda de/).
+Lee acerca de la [motivación detrás de esta clase](/acerca-de/).
 
 {% comment %}
 # Registro
