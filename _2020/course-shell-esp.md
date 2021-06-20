@@ -88,7 +88,7 @@ Fri 10 Jan 2020 11:49:31 AM EST
 missing:~$ 
 ```
 
-Aquí, ejecutamos el programa `date`, elcual (tal vez sorpresivamente) imprime la
+Aquí, ejecutamos el programa `date`, el cual (tal vez sorpresivamente) imprime la
 fecha actual y la hora. La shell, entonces nos pregunta por otro comando a ejecutar.
 También podemos ejecutar un comando con _argumentos_:
 
