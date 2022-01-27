@@ -21,7 +21,7 @@ suficientes fórmulas mágicas de memoria y copipegando comandos de Internet
 sin pensar cuando nos bloqueamos. Esta clase 
 es un intento de abordarlo.
 
-Queremos enseñarte como aprovechar al máximo las herramientas que conoces,
+Queremos enseñarte cómo aprovechar al máximo las herramientas que conoces,
 mostrarte nuevas para añadir a tu caja de herramientas y esperamos infundirte
 emoción para explorar (y tal vez construir) otras por cuenta propia.
 
