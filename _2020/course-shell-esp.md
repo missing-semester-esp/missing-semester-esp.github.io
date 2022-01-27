@@ -211,7 +211,7 @@ presente. Primero, la `d` en el inicio de la línea nos dice que
 Estos 3 grupos indican qué permisos tiene el dueño del archivo `missing`, el grupo del dueño
 `users`, y todos los demás. Arriba, solamente el dueño se le permite escribir `w` (añadir/remover archivos) en el directorio `missing`.
 Para entrar a un directorio, un usuario debe tener permisos para "buscar" (representado por "ejecutar": `x`)
-en ese directorio (y sus padres). Para listar sus contenido, un usuario debe tener permisos de lectur `r` en 
+en ese directorio (y sus padres). Para listar su contenido, un usuario debe tener permisos de lectura `r` en 
 ese directorio. Para los archivos, los permisos son como se esperan.  `-` indica que no se tiene ninguno de los
 permisos anteriores (ni lectura, ni ejecutar, ni escribir). Nota que casi todos los archivos en `/bin` tienen
 los permisos para ejecutar -`x`- establecidos para el último grupo -para los demás-, entonces
