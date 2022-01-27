@@ -101,7 +101,7 @@ En este caso, le ordenamos a la shell ejecutar el programa `echo` con el
 argumento `hello`. El programa `echo` simplemente imprime sus argumentos.
 La shell analiza el comando dividiéndolo por espacios en blanco, y entonces
 corre el programa indicado en la primera palabra, proveyendo cada subsecuente
-palabra como un argumento al que el programa puede acceder. Si tu quieres
+palabra como un argumento al que el programa puede acceder. Si tú quieres
 proveer un argumento que contiene espacios u otro carácter especial (por ejemplo, 
 un directorio nombrado "Mis fotos"), puedes citarlo como `'` (`'Mis fotos'`) o `"` 
 (`"Mis fotos"`), o escaparlo solamente con el relevante carácter con `\` (`Mis\ fotos`).
