@@ -262,7 +262,7 @@ missing:~$ curl --head --silent google.com | grep --ignore-case content-length |
 219
 ```
 
-## Un versátil y poderosa herramienta
+## Una herramienta versátil y poderosa
 
 En la mayoría parecidos a Unix, sobresale un usuario: el usuario "root", administrador o superusuario. 
 Tu podrás verlo visto, cuando listamos los archivos arriba. "root" está por encima (casi) de todas las restricciones 
