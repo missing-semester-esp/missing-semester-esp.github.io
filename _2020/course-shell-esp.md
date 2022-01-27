@@ -42,7 +42,7 @@ Puedes enviarnos tus preguntas a [missing-semester@mit.edu](mailto:missing-semes
 Debido al tiempo limitado, no cubriremos todas las herramientas en el mismo nivel de
 detalle que una clase de gran escala podría tener. Donde sea posible, intentaremos 
 guiarte hacia los recursos para guiarte para allá dentro de la herramienta o tema,
-pero si algo en particular te llama la atencion, no dudes en comunicarse con nosotros
+pero si algo en particular te llama la atención, no dudes en comunicarte con nosotros
 y pedir sugerencias.
 
 # Tema 1: La shell
