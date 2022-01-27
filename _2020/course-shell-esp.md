@@ -79,7 +79,7 @@ missing:~$
 Esta es la principal interfaz contextual a la shell y la terminal nos cuenta
 tu nombre de usuario `missing`; tu "directorio de trabajo" o donde actualmente estas, 
 que es `~` (abrevia "home"). El `$` cuenta que no eres el usuario administrador -"root"-.
-En este prompt tu puedes escribir un `comando`, el cual entonces sería interpretado por
+En este prompt tú puedes escribir un `comando`, el cual entonces sería interpretado por
 la shell. Uno de los comandos más básicos es: 
 
 ```console
