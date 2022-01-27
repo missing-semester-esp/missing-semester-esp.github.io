@@ -8,7 +8,7 @@ video:
   id: Z56Jmr9Z34Q
 ---
 
-# Motivacion
+# Motivación
 Como científico de la computación, sabemos que las computadoras son
 geniales en ayudarnos en tareas repetitivas. Sin embargo, 
 demasiado a menudo, olvidamos que aplica tanto a nuestro _uso_ de la
