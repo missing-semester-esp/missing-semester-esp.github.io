@@ -234,7 +234,7 @@ missing:~$ man ls
 En la shell, los programas tienen dos primarios flujos ("streams") asociados con ellos:
 sus flujos de entrada y sus flujos de salida. Cuando el programa intenta leer la entrada,
 lo intenta desde el flujo de entrada, y cuando imprime algo, eso lo imprime a su flujo de salida.
-Normalmente, un programa de entrada y de salida son ambos de tu terminal. Esto es, tu teclado como
+Normalmente, la entrada y la salida de un programa son ambos tu terminal. Esto es, tu teclado como
 flujo de entrada y tu pantalla como flujo de salida. Sin embargo, podemos reconectar esos flujos.
 
 La manera más simple de redireccionar es haciendo `< archivo` y `> archivo`. Esto te permite redirigir la entrada
