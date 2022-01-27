@@ -205,7 +205,7 @@ missing:~$ ls -l /home
 drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing
 ```
 
-Esto nos da un monto de información sobre nuestro archivo o directorio 
+Esto nos da un montón de información sobre cada archivo o directorio 
 presente. Primero, la `d` en el inicio de la línea nos dice que
 `missing` es un directorio. Entonces le siguen tres grupos de tres caracteres `rwx`.
 Estos 3 grupos indican que permisos tiene el dueño del archivo `missing`, el grupo del dueño
