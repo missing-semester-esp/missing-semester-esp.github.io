@@ -25,7 +25,7 @@ Queremos enseñarte cómo aprovechar al máximo las herramientas que conoces,
 mostrarte nuevas para añadir a tu caja de herramientas y esperamos infundirte
 emoción para explorar (y tal vez construir) otras por cuenta propia.
 
-Esto es lo que creemos falta en los semestres de la mayoría de las currículas
+Esto es lo que creemos que falta en los semestres de la mayoría de las currículas
 de las ciencias de la computación.
 
 # Estructura de la clase
