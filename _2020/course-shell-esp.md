@@ -169,8 +169,8 @@ hello
 Nota que nuestro prompt nos mantuvo informados sobre cuál fue nuestro directorio de trabajo. 
 Puedes configurarlo para mostrar todo tipo de información útil, luego veremos cómo.
 
-En general, cuando corremos programas, operamos en el directorio actual, a menos que digamos
-otra causa. Por ejemplo, usualmente buscamos archivos, y creamos archivos.
+En general, cuando corremos programas, operamos en el directorio actual, a menos que le digamos
+otra cosa. Por ejemplo, usualmente buscamos archivos, y creamos archivos.
 
 Para ver que vive en un directorio dado, usamos el comando `ls`:
 
