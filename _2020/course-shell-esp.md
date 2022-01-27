@@ -143,7 +143,7 @@ Generalmente asumimos que estás usando un sistema de archivos Linux.
 
 Una ruta que empieza con `/` es llamada una ruta _absoulta_. Cualquier otra ruta es una ruta _relativa_.
 Las rutas relativas son relativas con respecto al directorio de trabajo actual, al que podemos consultar
-con el comando `pwd` y cambiar con `cd`. En una ruta, `.` refiere al actual directorio y `..` al 
+con el comando `pwd` y cambiar con `cd`. En una ruta, `.` refiere al directorio actual y `..` al 
 directorio padre:
 
 
