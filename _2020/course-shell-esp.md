@@ -33,7 +33,7 @@ de las ciencias de la computación.
 Las clases consisten de 11 lecciones de 1 hora, cada una centrada
 en un [tópico particular](/2020/) y con un conjunto de ejercicios para
 guiarte en los puntos principales. Las clases son ampliamente independientes,
-aunque como las lecciones avanzan, asumimos que estás familiarizado con el
+aunque mientras las lecciones avanzan, asumimos que estás familiarizado con el
 contenido de las lecciones previas. Las notas de las clases -que estás leyendo-
 no cubren todo lo visto en las clases grabadas (por ejemplo, las demos).
 
