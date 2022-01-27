@@ -114,7 +114,7 @@ hello
 Pero ¿cómo logra la shell encontrar los programas `date` o `echo`?
 Bueno, la shell es un entorno de programación, como Python o Ruby,
 entonces tiene variables, condicionales, bucles, y funciones. Cuando corres
-comandos en tu shell, tú realmente escribes un pequeño bit de código que tu shell
+comandos en tu shell, tú realmente escribes una pequeña porción de código que tu shell
 interpreta. Si pides a la shell ejecutar un comando que no coincide con las
 palabras reservadas de su lenguaje, consulta una _variable de entorno_ llamada
 `$PATH`, que lista los directorios en que buscar programas al recibir un comando:
