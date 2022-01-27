@@ -70,7 +70,7 @@ una muy fácilmente.
 
 ## Usando la shell 
 
-Cuando tu lanzas tu terminal, tu ves un _prompt_ que frecuentemente luce así:
+Cuando lanzas tu terminal, ves un _prompt_ que frecuentemente luce así:
 
 ```console
 missing:~$ 
