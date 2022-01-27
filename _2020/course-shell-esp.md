@@ -222,7 +222,7 @@ Algunos otros comunes programas para conocer en este punto son `mv` (para renomb
 
 Si tu alguna vez quieres _más_ información sobre los argumentos de un programa, entradas, salidas,
 o como trabaja en general, prueba el comando `man` (páginas de manual). Eso toma como un argumento el nombre de un programa,
-y te muestra sus salidas. Presiona `q` para salir.
+y te muestra su _página del manual_. Presiona `q` para salir.
 
 ```console
 missing:~$ man ls
