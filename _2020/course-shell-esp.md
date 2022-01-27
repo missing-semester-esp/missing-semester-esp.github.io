@@ -141,7 +141,7 @@ En Linux y Darwin, la ruta `/` es la raíz del sistema de archivos, bajo la cual
 el resto de los archivos, mientras en Windows hay una raíz para cada partición (ejemplo: `C:\`).
 Generalmente asumimos que estás usando un sistema de archivos Linux. 
 
-Una ruta que empieza con `/` es llamada una ruta _absoulta_. Cual otra ruta es una ruta _relativa_.
+Una ruta que empieza con `/` es llamada una ruta _absoulta_. Cualquier otra ruta es una ruta _relativa_.
 Las rutas relativas son relativas con respecto al actual directorio de trabajo, cual podemos consultar
 con el comando `pwd` y cambiar con `cd`. En una ruta, `.` refiere al actual directorio y `..` al 
 directorio padre:
