@@ -237,8 +237,8 @@ lo intenta desde el flujo de entrada, y cuando imprime algo, eso lo imprime a su
 Normalmente, un programa de entrada y de salida son ambos de tu terminal. Esto es, tu teclado como
 flujo de entrada y tu salida como flujo de salida. Sin embargo, podemos usar otros flujos.
 
-La manera más simple de direccionar el `< archivo` y `> archivo`. Estos te dejan proveer un flujo de 
-entrada y salidas respectivamente:
+La manera más simple de redireccionar es haciendo `< archivo` y `> archivo`. Esto te permite redirigir la entrada
+y la salida de un programa a un archivo, respectivamente:
 
 ```console
 missing:~$ echo hello > hello.txt
