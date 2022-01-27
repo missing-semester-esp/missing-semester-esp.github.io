@@ -251,9 +251,9 @@ missing:~$ cat hello2.txt
 hello
 ```
 
-Tú también puedes usar `>>` para agregar después al final de un archivo. Donde este tipo de redirección
-entrada/salida realmente brilla es en el uso de _pipes_. El `|` operador te permite crear una "cadena"
-de programas tal que la salida es la entrada otro.
+También puedes usar `>>` para agregar al final de un archivo. Donde realmente brilla este tipo de
+redirección de entrada/salida es en el uso de _pipes_. El operador `|` te permite "encadenar"
+programas tal que la salida de uno sea la entrada de otro:
 
 ```console
 missing:~$ ls -l / | tail -n1
