@@ -217,7 +217,7 @@ permisos anteriores (ni lectura, ni ejecutar, ni escribir). Nota que casi todos 
 los permisos para ejecutar -`x`- establecidos para el último grupo -para los demás-, entonces
 cualquiera puede ejecutar esos programas.
 
-Algunos otros comunes programas para conocer en este punto son `mv` (para renombrar/mover un archivo), `cp`
+Algunos otros programas comunes para conocer en este punto son `mv` (para renombrar/mover un archivo), `cp`
 (para copiar un archivo) y `mkdir` (para crear un nuevo directorio).
 
 Si alguna vez quieres _más_ información sobre los argumentos de un programa, sus entradas, salidas,
