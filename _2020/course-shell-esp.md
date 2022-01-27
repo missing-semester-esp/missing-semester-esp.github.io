@@ -172,7 +172,7 @@ Puedes configurarlo para mostrar todo tipo de información útil, luego veremos 
 En general, cuando corremos programas, operamos en el directorio actual, a menos que le digamos
 otra cosa. Por ejemplo, usualmente buscamos archivos, y creamos archivos.
 
-Para ver que vive en un directorio dado, usamos el comando `ls`:
+Para ver qué vive en un directorio dado, usamos el comando `ls`:
 
 ```console
 missing:~$ ls
