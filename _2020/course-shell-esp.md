@@ -49,7 +49,7 @@ y pedir sugerencias.
 
 ##  ¿Qué es la shell?
 
-Las computadoras, estos días tienen una variedad de interfaces: 
+Las computadoras estos días tienen una variedad de interfaces: 
 sofisticadas interfaces gráficas de usuarios, interfaces de voz,
 AR/VR y muchas otras. Estas son geniales para el 80% de los casos de uso, pero
 ellas fundamentalmente te restringen lo que puedes hacer: tú no puedes presionar 
