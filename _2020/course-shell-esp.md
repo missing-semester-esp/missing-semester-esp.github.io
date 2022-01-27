@@ -136,7 +136,7 @@ proceso anterior, escribiendo la `ruta` al archivo a ejecutar.
 
 ## Navegando en la shell
 
-Una ruta en la shell esta lista de de directorios separados por `/` en Linux y Darwin; en Windows `\`.
+Una ruta en la shell es una lista de directorios separados por `/` en Linux y Darwin, y por `\` en Windows.
 En Linux y Darwin, la ruta `/` es la raíz del sistema de archivos, bajo la cual se encuentran
 el resto de los archivos, mientras en Windows hay una raíz para cada partición (ejemplo: `C:\`).
 Generalmente asumimos que estás usando un sistema de archivos Linux. 
