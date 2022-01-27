@@ -139,7 +139,7 @@ proceso anterior, escribiendo la `ruta` al archivo a ejecutar.
 
 Una ruta en la shell esta lista de de directorios separados por `/` en Linux y Darwin; en Windows `\`.
 En Linux y Darwin, la ruta `/` es la raíz del sistema de archivos, bajo el cual se encuentran
-el resto de los archivos, mientras en Windows hay una única raíz para cada partición (ejemplo: `C:\`).
+el resto de los archivos, mientras en Windows hay una raíz para cada partición (ejemplo: `C:\`).
 Generalmente asumimos que estás usando un sistema de archivos Linux. 
 
 Una ruta que empieza con `/` es llamada una ruta _absoulta_. Cual otra ruta es una ruta _relativa_.
