@@ -54,7 +54,7 @@ sofisticadas interfaces gráficas de usuarios, interfaces de voz,
 AR/VR y muchas otras. Éstas son geniales para el 80% de los casos de uso, pero
 ellas fundamentalmente te restringen lo que puedes hacer: tú no puedes presionar 
 un botón que no exista o dar una instrucción por voz que no esté programada.
-Para tomar ventaja completa de las herramientas tú debes proveer a la computadora,
+Para aprovechar por completo las herramientas que tu computadora provee,
 tenemos que ir a la vieja escuela y ejecutar una interfaz textual: la shell.
 
 En casi todos los sistemas operativos puedes encontrar una shell de una forma u otra
