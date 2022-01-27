@@ -113,7 +113,7 @@ hello
 
 Pero ¿cómo logra la shell encontrar los programas `date` o `echo`?
 Bueno, la shell es un entorno de programación, como Python o Ruby,
-entonces tiene variables, condicionales, bucles, y funciones. Cuando tu corres
+entonces tiene variables, condicionales, bucles, y funciones. Cuando corres
 comandos en tu shell, tú realmente escribes un pequeño bit de código que tu shell
 interpreta. La shell se pregunta, cuando es ejecutado un comando, si puede ejecutar 
 un comando de las palabras claves, si no coincide con ninguna, consulta una 
