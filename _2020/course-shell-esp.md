@@ -58,7 +58,7 @@ Para aprovechar por completo las herramientas que tu computadora provee,
 tenemos que ir a la vieja escuela y ejecutar una interfaz textual: la shell.
 
 En casi todos los sistemas operativos puedes encontrar una shell de una forma u otra
-y muchos de ellos diversas shells para elegir. Mientras ellos varían en los
+y muchos de ellos tienen diversas shells para elegir. Por más que varían en los
 detalles, en esencia son más o menos lo mismo: te permiten correr tu programas, 
 darle una entrada e inspeccionar sus salidas de manera semiestructurada.   
 
