@@ -63,7 +63,7 @@ detalles, en esencia son más o menos lo mismo: te permiten correr tu programas,
 darle una entrada e inspeccionar sus salidas de manera semiestructurada.   
 
 En esta lección, nos enfocamos en la "Bourne Again SHell", o "bash" para abreviar.
-Esta es una de las más ampliamente usadas shells, y su sintaxis es similar al resto.
+Ésta es una de las shells más ampliamente usadas, y su sintáxis es similar al resto.
 Para abrir una shell _prompt_ (donde puedas escribir comandos), tú primero necesitas
 una _terminal_. Tu computadora probablemente venga de serie con una, o puedes instalar
 una muy fácilmente. 
