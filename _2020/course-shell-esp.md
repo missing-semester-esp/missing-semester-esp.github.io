@@ -231,7 +231,7 @@ missing:~$ man ls
 ## Conectando programas
 
 En la shell, los programas tienen dos flujos ("streams") primarios asociados:
-sus flujos de entrada y sus flujos de salida. Cuando el programa intenta leer la entrada,
+su flujo de entrada y su flujo de salida. Cuando el programa intenta leer la entrada,
 lo intenta desde el flujo de entrada, y cuando imprime algo, eso lo imprime a su flujo de salida.
 Normalmente, la entrada y la salida de un programa son ambos tu terminal. Esto es, tu teclado como
 flujo de entrada y tu pantalla como flujo de salida. Sin embargo, podemos reconectar esos flujos.
