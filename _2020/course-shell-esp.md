@@ -208,7 +208,7 @@ drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing
 Esto nos da un montón de información sobre cada archivo o directorio 
 presente. Primero, la `d` en el inicio de la línea nos dice que
 `missing` es un directorio. Entonces le siguen tres grupos de tres caracteres `rwx`.
-Estos 3 grupos indican que permisos tiene el dueño del archivo `missing`, el grupo del dueño
+Estos 3 grupos indican qué permisos tiene el dueño del archivo `missing`, el grupo del dueño
 `users`, y todos los demás. Arriba, solamente el dueño se le permite escribir `w` (añadir/remover archivos) en el directorio `missing`.
 Para entrar a un directorio, un usuario debe tener permisos para "buscar" (representado por "ejecutar": `x`)
 en ese directorio (y sus padres). Para listar sus contenido, un usuario debe tener permisos de lectur `r` en 
