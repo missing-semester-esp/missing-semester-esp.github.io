@@ -38,7 +38,7 @@ echo '$foo'
 # imprime $foo
 ```
 
-Como en muchos lenguajes de programación, bash técnicas de flujo de control incluyendo `if`, `case`, `while` y `for`.
+Como en muchos lenguajes de programación, bash tiene técnicas de flujo de control incluyendo `if`, `case`, `while` y `for`.
 Similarmente, `bash` tiene funcoines que toman argumentos y pueden operar con ellos. Aqu[i hay un ejemplo de una función que crea un directorio y hace `cd` a él.
 
 As with most programming languages, bash supports control flow techniques including `if`, `case`, `while` and `for`.
@@ -66,7 +66,7 @@ Los comandos frecuentemente regresarán salida usando `STDOUT`, los errores usan
 El codigo de regreso o estado de salida es la manera en la que los scripts/comandos comunican como fue la ejecución.
 Un valor de 0 indica que el comando fue exitoso, mientras que cualquier otro valor indica que hubo un error.
 
-Los códigos de salida pueden ser usado para ejecutar comandos condicionalmente usando `&&` (operador AND) y `||` (operador OR), ambos son operadores de [corto circuito](https://es.wikipedia.org/wiki/Evaluaci%C3%B3n_de_cortocircuito). Los comandos tambíen pueden ser separados dentro de la misma linea usando `;` (punto y coma).
+Los códigos de salida pueden ser usados para ejecutar comandos condicionalmente usando `&&` (operador AND) y `||` (operador OR), ambos son operadores de [corto circuito](https://es.wikipedia.org/wiki/Evaluaci%C3%B3n_de_cortocircuito). Los comandos tambíen pueden ser separados dentro de la misma linea usando `;` (punto y coma).
 El programa `true` siempre tendra como código de salida 0, mientras que `false` siempre tendrá un código de salida diferente de 1.
 
 
@@ -90,10 +90,11 @@ false ; echo "Esto siempre correrá"
 # Esto siempre correrá
 ```
 
-Another common pattern is wanting to get the output of a command as a variable. This can be done with _command substitution_.
-Whenever you place `$( CMD )` it will execute `CMD`, get the output of the command and substitute it in place.
-For example, if you do `for file in $(ls)`, the shell will first call `ls` and then iterate over those values.
-A lesser known similar feature is _process substitution_, `<( CMD )` will execute `CMD` and place the output in a temporary file and substitute the `<()` with that file's name. This is useful when commands expect values to be passed by file instead of by STDIN. For example, `diff <(ls foo) <(ls bar)` will show differences between files in dirs  `foo` and `bar`.
+Otro patrón común es querer obtener la salida de un comando como una variable.
+Esto puede ser conseguidor con _sustitución de comandos_ (command substitution).
+Cuando se usa `$( CMD )` ejecutará `CMD`, obtiene la salida del comando y la sustituye en el lugar.
+Por ejemplo, si haces `for archivo in $(ls)`, la shell primero ejecutará `ls` y entonces iterará sobre esos valores.
+Una característica menos conocida es _sustitución de procesos_ (process substitution), `<( CMD )>` ejecutará `CMD` y colocará su salida en un archivo temporal y sustituirá el `<()` con ese nombre de archivo. Esto es muy útil cuando los comandos esperan valores para ser pasados por un archivo en lugar por STDIN. Por ejemplo, `diff <(ls foo) <(ls bar)` ejecutará `ls foo` y `ls bar` y comparará sus salidas.
 
 
 Since that was a huge information dump, let's see an example that showcases some of these features. It will iterate through the arguments we provide, `grep` for the string `foobar`, and append it to the file as a comment if it's not found.
