@@ -23,7 +23,7 @@ Así, crear encadenamientos de comandos, guardar resultados en archivos, y leer 
 
 Para esta sección nos enfocaremos en el scripting en bash ya que es el más común.
 
-Para assignar variables en bash, usa la sintaxis `foo=bar` y accede el valor de la variable con `$foo`.
+Para asignar variables en bash, usa la sintaxis `foo=bar` y accede el valor de la variable con `$foo`.
 Nota que `foo = bar` no funcionará desde que es interpretado como llamar el programa `foo` con el argumento `=` y `bar`.
 En general, en los scripts de shell el caracter de espacio realizará una separación de argumentos. Este comportamiento puede ser confuso al inicio, así que siempre está atento a eso.
 
@@ -39,10 +39,7 @@ echo '$foo'
 ```
 
 Como en muchos lenguajes de programación, bash tiene técnicas de flujo de control incluyendo `if`, `case`, `while` y `for`.
-Similarmente, `bash` tiene funcoines que toman argumentos y pueden operar con ellos. Aqu[i hay un ejemplo de una función que crea un directorio y hace `cd` a él.
-
-As with most programming languages, bash supports control flow techniques including `if`, `case`, `while` and `for`.
-Similarly, `bash` has functions that take arguments and can operate with them. Here is an example of a function that creates a directory and `cd`s into it.
+Similarmente, `bash` tiene funciones que toman argumentos y pueden operar con ellos. Aquí hay un ejemplo de una función que crea un directorio y hace `cd` a él.
 
 
 ```bash
@@ -97,82 +94,99 @@ Por ejemplo, si haces `for archivo in $(ls)`, la shell primero ejecutará `ls` y
 Una característica menos conocida es _sustitución de procesos_ (process substitution), `<( CMD )>` ejecutará `CMD` y colocará su salida en un archivo temporal y sustituirá el `<()` con ese nombre de archivo. Esto es muy útil cuando los comandos esperan valores para ser pasados por un archivo en lugar por STDIN. Por ejemplo, `diff <(ls foo) <(ls bar)` ejecutará `ls foo` y `ls bar` y comparará sus salidas.
 
 
-Since that was a huge information dump, let's see an example that showcases some of these features. It will iterate through the arguments we provide, `grep` for the string `foobar`, and append it to the file as a comment if it's not found.
+Ya que eso fue mucha información para ser procesada, veamos un ejemplo que muestra algunas de esas características. Iterará sobre los argumentos que le proveamos, aplicará `grep` para la cadena `foobar` en cada archivo, y si no encuentra una coincidencia lo agregará al final del archivo como comentario.
 
 ```bash
 #!/bin/bash
 
-echo "Starting program at $(date)" # Date will be substituted
+echo "Iniciando el programa a las $(date)" # La fecha será sustituida por la salida de `date`
 
-echo "Running program $0 with $# arguments with pid $$"
+echo "Ejecutando el programa $0 con $# argumentos y el identificador de proceso (pid) $$"
 
-for file in "$@"; do
-    grep foobar "$file" > /dev/null 2> /dev/null
-    # When pattern is not found, grep has exit status 1
-    # We redirect STDOUT and STDERR to a null register since we do not care about them
+for archivo in "$@"; do
+    grep foobar "$archivo" > /dev/null 2> /dev/null
+    # Cuando el patrón no es encontrado, grep tiene un estado de salida de 1
+    # Redirigimos STDOUT y STDERR a un registro nulo debido a que no nos interesa la salida
     if [[ $? -ne 0 ]]; then
-        echo "File $file does not have any foobar, adding one"
-        echo "# foobar" >> "$file"
+        echo "El archivo $archivo no contiene foobar, agregando comentario"
+        echo "# foobar" >> "$archivo"
     fi
 done
 ```
 
-In the comparison we tested whether `$?` was not equal to 0.
-Bash implements many comparisons of this sort - you can find a detailed list in the manpage for [`test`](https://www.man7.org/linux/man-pages/man1/test.1.html).
-When performing comparisons in bash, try to use double brackets `[[ ]]` in favor of simple brackets `[ ]`. Chances of making mistakes are lower although it won't be portable to `sh`. A more detailed explanation can be found [here](http://mywiki.wooledge.org/BashFAQ/031).
+// NOTA DEL EDITOR: Propongo este ejemplo de la salida en la terminal
 
-When launching scripts, you will often want to provide arguments that are similar. Bash has ways of making this easier, expanding expressions by carrying out filename expansion. These techniques are often referred to as shell _globbing_.
-- Wildcards - Whenever you want to perform some sort of wildcard matching, you can use `?` and `*` to match one or any amount of characters respectively. For instance, given files `foo`, `foo1`, `foo2`, `foo10` and `bar`, the command `rm foo?` will delete `foo1` and `foo2` whereas `rm foo*` will delete all but `bar`.
-- Curly braces `{}` - Whenever you have a common substring in a series of commands, you can use curly braces for bash to expand this automatically. This comes in very handy when moving or converting files.
+Si ejecutas el script con `./script.sh foo bar baz`, el resultado será algo como:
+
+```
+Iniciando el programa a las Thu  1 Aug 23:30:01 EDT 2019
+Ejecutando el programa ./script.sh con 3 argumentos y el identificador de proceso (pid) 12345
+El archivo foo no contiene foobar, agregando comentario
+El archivo bar no contiene foobar, agregando comentario
+El archivo baz no contiene foobar, agregando comentario
+```
+
+En la comparación no probamos si `$?` es igual a 0, sino que si es diferente de 0.
+Bash implementa muchas comparaciones de este tipo - puedes encontrar una lista en el [manual de test](https://www.man7.org/linux/man-pages/man1/test.1.html).
+Cuando se hacen comparaciones en bash, trata de usar corchetes dobles `[[ ]]` en lugar de corchetes simple `[ ]`. 
+Las posibilidades de hacer errores son menos, aunque no serán portables a `sh`. Una explicación más detallada puede ser encontrada [aquí](https://mywiki.wooledge.org/BashFAQ/031).
+
+Cuando se ejecutan scripts, frecuentemente se quieren pasar argumentos similares entre sí. Bash tiene maneras de hacer esto de una manera más sencilla, expandiendo expresiones llevando a cabo la expansión del nombre de archivo. Estas tecnicas a menudo se refieren a shell _globbing_ (expansión de nombre de archivo).
+
+- Membresías (Wildcards) - Siempre que quieras realizar alguna clase de coincidencia con membresías, puedes usar `?` y `*` para representar un sólo caracter o cualquier cantidad de caracteres respectivamente. Por ejemplo, dados los archivos `foo`, `foo1`, `foo2`, `foo10` y `bar`, el comando `rm foo?` eliminará `foo1` y `foo2` mientras que `rm foo*` borrará todos los archivos excepto `bar`.
+- Llaves (Curly braces) `{}` - Cuando tengas un patrón en una serie de comandos, puedes usar llaves para que bash lo expanda automáticamente. Por ejemplo, `echo foo{1,2,3}` imprimirá `foo1 foo2 foo3`. Esto viene muy bien para mover o convertir archivos.
 
 ```bash
-convert image.{png,jpg}
-# Will expand to
-convert image.png image.jpg
+convert imagen.{png,jpg}
+# Se expande a
+convert imagen.png imagen.jpg
 
-cp /path/to/project/{foo,bar,baz}.sh /newpath
-# Will expand to
-cp /path/to/project/foo.sh /path/to/project/bar.sh /path/to/project/baz.sh /newpath
+cp /ruta/al/proyecto/{foo,bar,baz}.sh /nuevaruta
+# Se expande a
+cp /ruta/al/proyecto/foo.sh /ruta/al/proyecto/bar.sh /ruta/al/proyecto/baz.sh /newpath
 
-# Globbing techniques can also be combined
-mv *{.py,.sh} folder
-# Will move all *.py and *.sh files
+# Las técnicas de globbing pueden ser combinadas
+mv *{.py,.sh} directorio
+# Va a mover todos los archivos con extensión .py y .sh al directorio
 
 
 mkdir foo bar
-# This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h
+# Esto crea los archivos foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h
 touch {foo,bar}/{a..h}
+
+
 touch foo/x bar/y
-# Show differences between files in foo and bar
+# Muestra las diferencias entre los archivos que hay en foo y bar
 diff <(ls foo) <(ls bar)
-# Outputs
+# Salida
 # < x
 # ---
 # > y
 ```
 
-<!-- Lastly, pipes `|` are a core feature of scripting. Pipes connect one program's output to the next program's input. We will cover them more in detail in the data wrangling lecture. -->
+<!-- Por ultimo, las tuberias (pipes) `|` son una característica fundamental del scripting. Las pipes pueden conectar la salida de un programa como entrada de otro programa. Esto se cubrirá más a detalle en la lectura de procesamiento de datos (data wrangling) -->
 
-Writing `bash` scripts can be tricky and unintuitive. There are tools like [shellcheck](https://github.com/koalaman/shellcheck) that will help you find errors in your sh/bash scripts.
+Escribir scripts de `bash` puede ser engañoso y contra-intuitivo. Hay herramientas como [shellcheck](https:github.com/koalaman/shellcheck) que pueden ayudar a encontrar errores tus scripts de sh/bash.
 
-Note that scripts need not necessarily be written in bash to be called from the terminal. For instance, here's a simple Python script that outputs its arguments in reversed order:
+Nota que los scripts no necesariamente tienen que ser escritos en bash para ser ejecutados desde la terminal. Por ejemplo, aqui hay un simple script en Python que imprime los argumentos en orden inverso:
 
 ```python
 #!/usr/local/bin/python
 import sys
-for arg in reversed(sys.argv[1:]):
-    print(arg)
+for argumento in reversed(sys.argv[1:]):
+    print(argumento)
 ```
 
-The kernel knows to execute this script with a python interpreter instead of a shell command because we included a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line at the top of the script.
-It is good practice to write shebang lines using the [`env`](https://www.man7.org/linux/man-pages/man1/env.1.html) command that will resolve to wherever the command lives in the system, increasing the portability of your scripts. To resolve the location, `env` will make use of the `PATH` environment variable we introduced in the first lecture.
-For this example the shebang line would look like `#!/usr/bin/env python`.
+El kernel sabe como ejecutar este script con un intérprete de Python en lugar de shell porque incluimos un [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) `#!/usr/local/bin/python` en la primera línea del script. El shebang es una línea que indica al kernel que el script debe ser ejecutado con un intérprete de Python en lugar de con el shell. El shebang es opcional, pero es una buena práctica incluirlo en los scripts.
 
-Some differences between shell functions and scripts that you should keep in mind are:
-- Functions have to be in the same language as the shell, while scripts can be written in any language. This is why including a shebang for scripts is important.
-- Functions are loaded once when their definition is read. Scripts are loaded every time they are executed. This makes functions slightly faster to load, but whenever you change them you will have to reload their definition.
-- Functions are executed in the current shell environment whereas scripts execute in their own process. Thus, functions can modify environment variables, e.g. change your current directory, whereas scripts can't. Scripts will be passed by value environment variables that have been exported using [`export`](https://www.man7.org/linux/man-pages/man1/export.1p.html)
-- As with any programming language, functions are a powerful construct to achieve modularity, code reuse, and clarity of shell code. Often shell scripts will include their own function definitions.
+Es buena prática escribir las líneas de  __shebang__ usando el comando [`env`](https://www.man7.org/linux/man-pages/man1/env.1.html) que resolverá cualquier comando que exista en el sistema, incrementando la portabilidad de tus scripts. Para resolver la ubicación, `env` hará uso de la variable de entorno `PATH` que vimos en la primera lectura.
+Para este ejemplo el shebang sería `#!/usr/bin/env python`.
+
+Algunas diferencias entre las funciones de la shell y los scripts que debes de tener en cuenta:
+- Las funciones deben de ser en el mismo lenguaje que la shell, mientras que los scripts pueden ser escritos en cualquier lenguaje. Esto es porque las funciones son ejecutadas por la shell, mientras que los scripts son ejecutados por un intérprete. Por eso es importante que los scripts incluyan un shebang.
+- Las funciones son cargadas una vez que su definición es leída. Los scripts son cargados cada vez que son ejecutados.Esto significa que las funciones son un poco más rápidas que los scripts, pero en cuanto los cambias tienes que recargar toda su definición.
+- Las funciones son ejecutadas en el ambiente de actual de la shell, mientras que los scripts son ejecutados en sus propios procesos. Así, las funciones pueden modificar variables de entorno, por ejemplo, cambiar tu directorio actual, mientras que los scripts no pueden hacerlo. Los scripts serán pasados por los valores de variables de entorno que han sido exportados usando [`export`](https://www.man7.org/linux/man-pages/man1/export.1p.html)
+- Como en muchos lenguajes de programacion, las funciones son muy útiles para alcanzar modularidad, rehusabilidad de código, y claridad del código de la shell. Frecuentemente los scripts de shell incluirán sus propias definiciones de funciones.
 
 # Shell Tools
 
