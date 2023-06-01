@@ -186,26 +186,24 @@ Algunas diferencias entre las funciones de la shell y los scripts que debes de t
 - Las funciones deben de ser en el mismo lenguaje que la shell, mientras que los scripts pueden ser escritos en cualquier lenguaje. Esto es porque las funciones son ejecutadas por la shell, mientras que los scripts son ejecutados por un intérprete. Por eso es importante que los scripts incluyan un shebang.
 - Las funciones son cargadas una vez que su definición es leída. Los scripts son cargados cada vez que son ejecutados.Esto significa que las funciones son un poco más rápidas que los scripts, pero en cuanto los cambias tienes que recargar toda su definición.
 - Las funciones son ejecutadas en el ambiente de actual de la shell, mientras que los scripts son ejecutados en sus propios procesos. Así, las funciones pueden modificar variables de entorno, por ejemplo, cambiar tu directorio actual, mientras que los scripts no pueden hacerlo. Los scripts serán pasados por los valores de variables de entorno que han sido exportados usando [`export`](https://www.man7.org/linux/man-pages/man1/export.1p.html)
-- Como en muchos lenguajes de programacion, las funciones son muy útiles para alcanzar modularidad, rehusabilidad de código, y claridad del código de la shell. Frecuentemente los scripts de shell incluirán sus propias definiciones de funciones.
+- Como en muchos lenguajes de programación, las funciones son muy útiles para alcanzar modularidad, reusabilidad de código, y claridad del código de la shell. Frecuentemente los scripts de shell incluirán sus propias definiciones de funciones.
 
-# Shell Tools
+# Herramientas de la shell
 
-## Finding how to use commands
+## Descubriendo como usar los comandos
 
-At this point, you might be wondering how to find the flags for the commands in the aliasing section such as `ls -l`, `mv -i` and `mkdir -p`.
-More generally, given a command, how do you go about finding out what it does and its different options?
-You could always start googling, but since UNIX predates StackOverflow, there are built-in ways of getting this information.
+En este punto, puede que te estés preguntando como encontrar las banderas para los comandos en la sección de aliasing como `ls -l`, `mv -i` y `mkdir -p`. Generalmente, dado un comando, ¿cómo puedes encontrar lo que hace y sus diferentes opciones? Siempre puedes empezar a buscar en Google, pero dado que UNIX es anterior a StackOverflow, hay maneras de obtener esta información.
 
-As we saw in the shell lecture, the first-order approach is to call said command with the `-h` or `--help` flags. A more detailed approach is to use the `man` command.
-Short for manual, [`man`](https://www.man7.org/linux/man-pages/man1/man.1.html) provides a manual page (called manpage) for a command you specify.
-For example, `man rm` will output the behavior of the `rm` command along with the flags that it takes, including the `-i` flag we showed earlier.
-In fact, what I have been linking so far for every command is the online version of the Linux manpages for the commands.
-Even non-native commands that you install will have manpage entries if the developer wrote them and included them as part of the installation process.
-For interactive tools such as the ones based on ncurses, help for the commands can often be accessed within the program using the `:help` command or typing `?`.
+Como vimos en la lectura de la shell, el enfoque de primer orden es llamar al comando con las banderas `-h` o `--help`. Un enfoque más detallado es usar el comando `man`.
+Una abreviacion para manual, [`man`](https://www.man7.org/linux/man-pages/man1/man.1.html) provee una página de manual (manpage) para un comando que especificas.
+Por ejemplo, `man rm` imprimirá el comportamiento del comando `rm` junto con las banderas que toma, incluyendo la bandera `-i` que mostramos anteriormente.
+De hecho, lo que hemos estado enlazando hasta ahora para cada comando es la versión en línea de las manpages de Linux para los comandos.
+Incluso los comandos no nativos que instalas tendrán entradas de manpage si el desarrollador las escribió e incluyó como parte del proceso de instalación.
+Para herramientas interactivas como las basadas en ncurses, la ayuda para los comandos a menudo se puede acceder dentro del programa usando el comando `:help` o escribiendo `?`.
 
-Sometimes manpages can provide overly detailed descriptions of the commands, making it hard to decipher what flags/syntax to use for common use cases.
-[TLDR pages](https://tldr.sh/) are a nifty complementary solution that focuses on giving example use cases of a command so you can quickly figure out which options to use.
-For instance, I find myself referring back to the tldr pages for [`tar`](https://tldr.ostera.io/tar) and [`ffmpeg`](https://tldr.ostera.io/ffmpeg) way more often than the manpages.
+Algunas veces las `manpages` pueden proveer descripciones excesivamente detalladas de los comandos, haciendo difícil descifrar que banderas/sintaxis usar para casos de uso comunes.
+Las páginas [TLDR](https://tldr.sh/) son una solución complementaria que se enfoca en dar casos de uso de ejemplo de un comando para que puedas descifrar rápidamente que opciones usar.
+Por ejemplo, me encuentro refiriéndome a las páginas de tldr para [`tar`](https://tldr.ostera.io/tar) y [`ffmpeg`](https://tldr.ostera.io/ffmpeg) mucho más seguido que a las manpages.
 
 
 ## Finding files
