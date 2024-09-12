@@ -19,7 +19,7 @@ Los scripts de terminal son el siguiente paso en complejidad.
 Muchas terminales tienen su propio lenguaje de scripting con variables, control de flujo y su propia sintaxis.
 Lo que hace diferente el scripting en la shell de otros lenguajes de programacion de scripting es que esta optimizado para realizar tareas relacionadas a la terminal.
 
-Así, crear encadenamientos de comandos, guardar resultados en archivos, y leer del dispositivo de entrada estándar son tareas primitivas en scripts de terminal, que lo hace más faicl que usar un lenguaje scripting de propósito general.
+Así, crear encadenamientos de comandos, guardar resultados en archivos, y leer del dispositivo de entrada estándar son tareas primitivas en scripts de terminal, que lo hace más fácil que usar un lenguaje scripting de propósito general.
 
 Para esta sección nos enfocaremos en el scripting en bash ya que es el más común.
 
