@@ -17,6 +17,15 @@ Para construir y ver el sitio de forma local, ejecuta:
 bundle exec jekyll serve -w
 ```
 
+### Docker
+
+Para construir construir y ver el sitio de forma local usando un contenedor, ejecuta:
+
+```bash
+ docker run --rm -d -p 4000:4000 -v "$(pwd):/usr/src" --name app antonio072/missing-semester-web:latest
+```
+
+De aquí puedes revisar tus cambios en tiempo real recargando la página ingresando a http://locahost:4000 
 ## Notas sobre la traducción
 
 - Editores (Vim): corroborar traducción para el Visual Mode en comunidades de
